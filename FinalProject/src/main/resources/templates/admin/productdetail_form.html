@@ -87,9 +87,13 @@
                         <h4 class="modal-title">Form Chi tiết sản phẩm</h4>
                     </div>
                     <div class="modal-body">
-
+                        <div class="img-select-block margin-bottom-15">
+                            <label>Product image</label><br/>
+                            <img id="preview-product-detail-img" th:src="@{/img/default.png}" />
+                            <input type='file' id="input-select-img-product-detail" />
+                        </div>
                         <div class="form-group margin-bottom-15">
-                            <label for="product-category">Màu:</label>
+                            <label for="product-category">Kích cỡ:</label>
                             <select class="form-control" id="productdetail-size">
                                 <option th:each="size : ${sizes}"
                                         th:value="${size.getSize_id()}"
@@ -99,7 +103,7 @@
 
 
                         <div class="form-group margin-bottom-15">
-                            <label for="product-category">Kích cỡ:</label>
+                            <label for="product-category">Màu:</label>
                             <select class="form-control" id="productdetail-color">
                                 <option th:each="color : ${colors}"
                                         th:value="${color.getColor_id()}"

@@ -20,16 +20,25 @@ public class ProductDetail {
     private Product product;
 
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne
     @JoinColumn(name = "size_id")
     private Size size;
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne
     @JoinColumn(name = "color_id")
     private Color color;
     @Column(name = "quantity")
     private int quantity;
 
+    @Column(name = "image")
+    private String image;
 
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
 
     public int getProductdetail_id() {
         return productdetail_id;

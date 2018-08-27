@@ -3234,3 +3234,109 @@
 2018-Aug-25 10:42:24 AM [http-nio-1111-exec-1] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@121942e
 2018-Aug-25 10:42:38 AM [http-nio-1111-exec-9] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@97747a
 2018-Aug-25 10:42:50 AM [http-nio-1111-exec-2] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@38ae93
+2018-Aug-27 09:44:05 AM [main] DEBUG application.Application - Start main ---------------- 
+2018-Aug-27 09:44:05 AM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Aug-27 09:46:32 AM [main] DEBUG application.Application - Start main ---------------- 
+2018-Aug-27 09:46:32 AM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Aug-27 10:19:40 AM [main] DEBUG application.Application - Start main ---------------- 
+2018-Aug-27 10:19:40 AM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Aug-27 10:21:20 AM [main] DEBUG application.Application - Start main ---------------- 
+2018-Aug-27 10:21:21 AM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Aug-27 10:24:22 AM [main] DEBUG application.Application - Start main ---------------- 
+2018-Aug-27 10:24:22 AM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Aug-27 10:25:38 AM [main] DEBUG application.Application - Start main ---------------- 
+2018-Aug-27 10:25:38 AM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Aug-27 10:28:55 AM [main] DEBUG application.Application - Start main ---------------- 
+2018-Aug-27 10:28:55 AM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Aug-27 10:31:39 AM [http-nio-1111-exec-6] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@c957ad
+2018-Aug-27 10:31:44 AM [http-nio-1111-exec-4] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@343d98
+2018-Aug-27 10:33:20 AM [main] DEBUG application.Application - Start main ---------------- 
+2018-Aug-27 10:33:21 AM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Aug-27 10:39:02 AM [main] DEBUG application.Application - Start main ---------------- 
+2018-Aug-27 10:39:02 AM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Aug-27 10:40:12 AM [http-nio-1111-exec-1] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@14e70ab
+2018-Aug-27 10:40:34 AM [http-nio-1111-exec-2] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@4af477
+2018-Aug-27 10:40:46 AM [http-nio-1111-exec-1] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@cab192
+2018-Aug-27 10:41:32 AM [http-nio-1111-exec-4] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@c1ed7a
+2018-Aug-27 11:11:39 AM [http-nio-1111-exec-7] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@15d785a
+2018-Aug-27 11:11:41 AM [http-nio-1111-exec-3] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@18847f5
+2018-Aug-27 11:41:43 AM [http-nio-1111-exec-6] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@1d80005
+2018-Aug-27 11:48:32 AM [main] DEBUG application.Application - Start main ---------------- 
+2018-Aug-27 11:48:32 AM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Aug-27 11:50:13 AM [http-nio-1111-exec-6] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@2d01c6
+2018-Aug-27 11:51:32 AM [http-nio-1111-exec-6] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@bfb6bf
+2018-Aug-27 11:52:48 AM [main] DEBUG application.Application - Start main ---------------- 
+2018-Aug-27 11:52:48 AM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Aug-27 11:53:11 AM [http-nio-1111-exec-1] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@1fa0395
+2018-Aug-27 11:53:33 AM [http-nio-1111-exec-4] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@1f5ba82
+2018-Aug-27 11:54:03 AM [http-nio-1111-exec-9] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@d18386
+2018-Aug-27 11:54:05 AM [http-nio-1111-exec-7] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@1857c34
+2018-Aug-27 11:55:10 AM [main] DEBUG application.Application - Start main ---------------- 
+2018-Aug-27 11:55:10 AM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Aug-27 11:55:26 AM [http-nio-1111-exec-1] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@bbd394
+2018-Aug-27 11:57:01 AM [http-nio-1111-exec-4] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@d77f77
+2018-Aug-27 11:59:45 AM [main] DEBUG application.Application - Start main ---------------- 
+2018-Aug-27 11:59:46 AM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Aug-27 12:01:53 PM [http-nio-1111-exec-1] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@5ca9e6
+2018-Aug-27 12:04:34 PM [http-nio-1111-exec-10] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@1a48023
+2018-Aug-27 12:04:34 PM [http-nio-1111-exec-10] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@326ed9
+2018-Aug-27 12:05:28 PM [http-nio-1111-exec-2] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@1ff6f10
+2018-Aug-27 12:05:28 PM [http-nio-1111-exec-2] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@9f354f
+2018-Aug-27 12:06:42 PM [http-nio-1111-exec-4] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@1d77c41
+2018-Aug-27 12:06:42 PM [http-nio-1111-exec-4] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@148fc26
+2018-Aug-27 12:06:43 PM [http-nio-1111-exec-7] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@4e5e1f
+2018-Aug-27 12:06:43 PM [http-nio-1111-exec-7] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@82ef72
+2018-Aug-27 12:06:43 PM [http-nio-1111-exec-10] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@41e55
+2018-Aug-27 12:06:43 PM [http-nio-1111-exec-10] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@19cbfa2
+2018-Aug-27 12:06:43 PM [http-nio-1111-exec-8] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@1226445
+2018-Aug-27 12:06:43 PM [http-nio-1111-exec-8] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@1e5196b
+2018-Aug-27 12:07:14 PM [http-nio-1111-exec-3] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@131153
+2018-Aug-27 12:07:14 PM [http-nio-1111-exec-3] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@1b5f0e9
+2018-Aug-27 12:07:30 PM [http-nio-1111-exec-7] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@fbd126
+2018-Aug-27 12:07:30 PM [http-nio-1111-exec-7] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@14887f9
+2018-Aug-27 12:08:29 PM [http-nio-1111-exec-1] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@568887
+2018-Aug-27 12:08:29 PM [http-nio-1111-exec-1] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@382fd9
+2018-Aug-27 12:11:55 PM [http-nio-1111-exec-2] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@12b2f1a
+2018-Aug-27 12:11:55 PM [http-nio-1111-exec-2] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@1fbc273
+2018-Aug-27 12:17:28 PM [http-nio-1111-exec-2] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@1b5b38
+2018-Aug-27 12:17:28 PM [http-nio-1111-exec-2] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@6e2538
+2018-Aug-27 12:17:29 PM [http-nio-1111-exec-1] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@39dabd
+2018-Aug-27 12:17:29 PM [http-nio-1111-exec-1] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@184466e
+2018-Aug-27 12:17:30 PM [http-nio-1111-exec-6] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@1a111a6
+2018-Aug-27 12:17:30 PM [http-nio-1111-exec-6] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@fd02bd
+2018-Aug-27 12:17:30 PM [http-nio-1111-exec-9] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@e7a63b
+2018-Aug-27 12:17:30 PM [http-nio-1111-exec-9] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@1e9092c
+2018-Aug-27 12:17:30 PM [http-nio-1111-exec-10] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@9e6da9
+2018-Aug-27 12:17:30 PM [http-nio-1111-exec-10] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@1e14849
+2018-Aug-27 12:17:31 PM [http-nio-1111-exec-8] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@1ebc1fc
+2018-Aug-27 12:17:31 PM [http-nio-1111-exec-8] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@1a6f76e
+2018-Aug-27 12:18:10 PM [http-nio-1111-exec-10] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@b213fd
+2018-Aug-27 12:18:10 PM [http-nio-1111-exec-10] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@1acac97
+2018-Aug-27 12:18:11 PM [http-nio-1111-exec-4] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@15e89ea
+2018-Aug-27 12:18:11 PM [http-nio-1111-exec-4] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@8b122d
+2018-Aug-27 12:18:12 PM [http-nio-1111-exec-5] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@f062ed
+2018-Aug-27 12:18:12 PM [http-nio-1111-exec-5] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@6d2df6
+2018-Aug-27 12:18:13 PM [http-nio-1111-exec-8] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@1a6e92f
+2018-Aug-27 12:18:13 PM [http-nio-1111-exec-8] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@183cb79
+2018-Aug-27 12:18:14 PM [http-nio-1111-exec-3] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@1107987
+2018-Aug-27 12:18:14 PM [http-nio-1111-exec-3] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@1432ee8
+2018-Aug-27 12:18:15 PM [http-nio-1111-exec-6] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@13c7577
+2018-Aug-27 12:18:15 PM [http-nio-1111-exec-6] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@19302ce
+2018-Aug-27 12:18:34 PM [http-nio-1111-exec-1] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@1881430
+2018-Aug-27 12:18:34 PM [http-nio-1111-exec-1] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@69b960
+2018-Aug-27 12:18:35 PM [http-nio-1111-exec-2] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@195ab3e
+2018-Aug-27 12:18:35 PM [http-nio-1111-exec-2] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@66ece7
+2018-Aug-27 12:18:37 PM [http-nio-1111-exec-3] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@20c3ff
+2018-Aug-27 12:18:37 PM [http-nio-1111-exec-3] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@21081e
+2018-Aug-27 12:18:37 PM [http-nio-1111-exec-8] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@19a3273
+2018-Aug-27 12:18:37 PM [http-nio-1111-exec-8] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@199e857
+2018-Aug-27 12:18:45 PM [http-nio-1111-exec-6] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@1ed05df
+2018-Aug-27 12:18:45 PM [http-nio-1111-exec-6] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@97a601
+2018-Aug-27 12:18:45 PM [http-nio-1111-exec-1] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@b96da5
+2018-Aug-27 12:18:45 PM [http-nio-1111-exec-1] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@169762e
+2018-Aug-27 12:18:46 PM [http-nio-1111-exec-2] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@1b6c6ee
+2018-Aug-27 12:18:46 PM [http-nio-1111-exec-2] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@cb9b2e
+2018-Aug-27 12:19:30 PM [http-nio-1111-exec-8] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@124f4a5
+2018-Aug-27 12:19:30 PM [http-nio-1111-exec-8] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@1e7cda2
+2018-Aug-27 12:19:31 PM [http-nio-1111-exec-10] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@146da3c
+2018-Aug-27 12:19:31 PM [http-nio-1111-exec-10] INFO  application.controller.admin.AdminProductDetailController - Productapplication.model.ProductDetailModel@5499eb

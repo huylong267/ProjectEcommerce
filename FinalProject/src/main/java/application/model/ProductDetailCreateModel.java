@@ -5,6 +5,15 @@ public class ProductDetailCreateModel {
     private int size_id;
     private int color_id;
     private int quantity;
+    private  String image;
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
 
     public int getProduct_id() {
         return product_id;

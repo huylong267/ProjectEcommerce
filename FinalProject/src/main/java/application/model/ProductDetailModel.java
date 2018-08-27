@@ -15,6 +15,15 @@ public class ProductDetailModel {
     private SizeNameModel size;
     private ColorNameModel color;
     private int quantity;
+    private String image;
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
 
     public ProductNameModel getProduct() {
         return product;

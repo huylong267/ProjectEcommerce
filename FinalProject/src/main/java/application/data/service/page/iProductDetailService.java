@@ -10,4 +10,6 @@ public interface iProductDetailService {
     List<ProductDetail> findAllDetail();
     List<ProductDetail> findByProductId(int id);
     void delete(int id);
+    ProductDetail getByDetail(int productId, int sizeId, int colorId);
+
 }

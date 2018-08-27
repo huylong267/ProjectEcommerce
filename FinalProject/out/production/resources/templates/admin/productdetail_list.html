@@ -10,7 +10,7 @@
 	<div id="page-wrapper">
 		<div class="row">
 			<div class="col-sm-12">
-				<h3 class="page-header">Quản lý sản phẩm</h3>
+				<h3 class="page-header">Quản lý  chi tiết sản phẩm</h3>
 			</div>
 			<!-- /.col-sm-12 -->
 		</div>
@@ -34,19 +34,23 @@
 							   id="dataTables-example">
 							<thead>
 									<tr>
+										<th width="10%">Mã</th>
 										<th width="20%">Tên sản  phẩm</th>
-										<th width="20%">Kích cỡ</th>
-										<th width="20%">Màu </th>
-										<th width="20%">Số lượng</th>
+										<th width="10%">Kích cỡ</th>
+										<th width="10%">Màu </th>
+										<th width="10%">Số lượng</th>
+										<th width="20%">Ảnh</th>
 										<th width="20%">Tùy chọn</th>
 									</tr>
 							</thead>
 							<tbody>
 							<tr th:each="product : ${listproductdetail}">
+								<td><span th:text="${product.getProduct().getProduct_id()}"></span></td>
 								<td><span th:text="${product.getProduct()}"></span></td>
 								<td><span th:text="${product.getSize()}"></span></td>
 								<td><span th:text="${product.getColor()}"></span></td>
 								<td><span th:text="${product.getQuantity()}"></span></td>
+								<td><span th:text="${product.getImage()}"></span></td>
 								<td>
 									<div class="dropdown">
 										<button class="btn btn-danger btn-sm dropdown-toggle" data-toggle="dropdown">

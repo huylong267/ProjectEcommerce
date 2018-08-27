@@ -10,16 +10,13 @@ import application.model.*;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping(path = "/api/productdetail")
-public class ProductDetailApiController {
+public class    ProductDetailApiController {
     @Autowired
     private ProductServiceImp productServiceImp;
     @Autowired
@@ -33,13 +30,13 @@ public class ProductDetailApiController {
     public BaseApiResult createProduct(@RequestBody ProductDetailCreateModel product) {
         DataApiResult result = new DataApiResult();
         try {
-            if (!"".equals(product.getQuantity()) && !"".equals(product.getColor_id()) && !"".equals(product.getSize_id())) {
+            if (!"".equals(product.getQuantity()) && !"".equals(product.getColor_id()) && !"".equals(product.getSize_id()) && !"".equals(product.getImage())) {
 
                 ProductDetail productDetail = new ProductDetail();
                 productDetail.setProduct(productServiceImp.findOneProduct(product.getProduct_id()));
                 productDetail.setSize(sizeServiceImp.findOneSize(product.getSize_id()));
                 productDetail.setColor(colorServiceImp.findOneColor(product.getColor_id()));
-
+                productDetail.setImage(product.getImage());
                 List<ProductDetail> listProduct = productDetailServiceImp.findByProductId(product.getProduct_id());
                 if (listProduct.size()==0) {
                     productDetail.setQuantity(product.getQuantity());
@@ -50,6 +47,8 @@ public class ProductDetailApiController {
                                 productDetail.getColor().getColor_id() == detail.getColor().getColor_id()) {
                             int quantity = product.getQuantity() + detail.getQuantity();
                             productDetail.setQuantity(quantity);
+                            ProductDetail detailExist =productDetailServiceImp.getByDetail(product.getProduct_id(),product.getSize_id(),product.getColor_id());
+                            productDetailServiceImp.delete(detailExist.getProductdetail_id());
                             productDetailServiceImp.createDetail(productDetail);
                         }
                     }
@@ -70,6 +69,15 @@ public class ProductDetailApiController {
         return result;
     }
 
+//    @PostMapping("/update-detail/{id}")
+//    public BaseApiResult updateDetail (@PathVariable("id") int productDetailId ,
+//                                       @RequestBody ProductDetailEditModel editModel){
+//
+//        DataApiResult result = new DataApiResult();
+//        if(!"".equals(editModel.getQuantity())){
+//
+//        }
+//    }
 
 }
 

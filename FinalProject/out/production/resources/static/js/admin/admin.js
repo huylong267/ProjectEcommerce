@@ -44,6 +44,8 @@ $(document).ready(function () {
 
     $(".btn-edit-product").on("click", function () {
         $("#form-update-date").css({ display: "block" });
+        $("#datepicker-created-date-product").addClass("disabledbutton");
+
         var pdInfo = $(this).data("product");
          NProgress.start();
         axios.get("/api/product/getproduct/" + pdInfo).then(function(res){

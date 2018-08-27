@@ -1,0 +1,6 @@
+
+T
+squid:S106,"9Replace this use of System.out or System.err by a logger.(É‚·áıÿÿÿÿ
+gsquid:S1192"PDefine a constant instead of duplicating this literal "admin/news_form" 3 times.(ôÔ´û
+msquid:S11924"VDefine a constant instead of duplicating this literal "redirect:/admin/news/" 3 times.(æ™é×
+dsquid:S11923"HDefine a constant instead of duplicating this literal "success" 4 times.(âïşûÿÿÿÿ

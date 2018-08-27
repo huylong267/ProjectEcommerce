@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="common::head"></div>
+    <link rel="stylesheet" th:href="@{/css/home.css}">
+    <link rel="stylesheet" th:href="@{/css/user.css}">
+</head>
+<body>
+<div class="container-fluid">
+    <div th:replace="common::header"></div>
+    <div class="main">
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 toppad" >
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Thông tin Khách hàng</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-3 col-lg-3" align="center">
+                                <img id="preview-product-img" alt="User Pic" src="/link/1528177697-default-user.png" class="img-circle img-responsive">
+                                <input type='file' id="input-select-img-product" />
+                            </div>
+
+                            <div class=" col-md-9 col-lg-9 ">
+                                <table class="table table-user-information">
+                                    <tbody>
+                                    <tr>
+                                        <td>Tên đăng nhập:</td>
+                                        <td><input class="form-control"  type="text" id="username"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Họ tên:</td>
+                                        <td><input class="form-control"  type="text" id="fullname"></td>
+                                    </tr>
+                                    <tr>
+                                    <tr>
+                                        <td>Giới tính:</td>
+                                        <td>
+                                            <form>
+                                                <input id="male" type="radio" name="gender" value="male"> Male<br>
+                                                <input id="female" type="radio" name="gender" value="female"> Female<br>
+                                                <input id="other" type="radio" name="gender" value="other"> Other
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Địa chỉ:</td>
+                                        <td><input  class="form-control" type="text" id="address"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Email:</td>
+                                        <td><input  class="form-control" type="text" id="email"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mật khẩu cũ:</td>
+                                        <td><input  class="form-control" type="password" id="old-password"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mật khẩu mới:</td>
+                                        <td><input  class="form-control" type="password" id="new-password"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <button class="btn btn-default btn-save-user">Lưu thông tin</button>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+    </div>
+    <div th:replace="common::footer"></div>
+</div>
+    <script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+<script type="text/javascript">
+    if (window.location.hash && window.location.hash == '#_=_') {
+        if (window.history && history.pushState) {
+            window.history.pushState("", document.title, window.location.pathname);
+        } else {
+            // Prevent scrolling by storing the page's current scroll offset
+            var scroll = {
+                top: document.body.scrollTop,
+                left: document.body.scrollLeft
+            };
+            window.location.hash = '';
+            // Restore the scroll offset, should be flicker free
+            document.body.scrollTop = scroll.top;
+            document.body.scrollLeft = scroll.left;
+        }
+    }
+    </script>
+    <script th:src="@{/js/user.js}"></script>
+</body>
+</html>

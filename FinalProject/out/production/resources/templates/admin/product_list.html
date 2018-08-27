@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="admin/layout :: head"></head>
+<body>
+
+<div id="wrapper">
+
+	<nav th:replace="admin/layout :: sidebar"></nav>
+
+	<div id="page-wrapper">
+	    <div class="row">
+	        <div class="col-sm-12">
+	            <h3 class="page-header">Quản lý sản phẩm</h3>
+	        </div>
+	        <!-- /.col-sm-12 -->
+	    </div>
+	    <!-- /.row -->
+
+	    <div class="row">
+	        <div class="col-sm-12">
+	        	<!--<div th:if="${success}" class="row alert alert-success alert-dismissible">-->
+			        <!--<button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>-->
+			        <!--<span th:text="${success}"></span>-->
+			    <!--</div>-->
+
+	            <div class="panel panel-primary">
+	                <div class="panel-heading">
+	                    Danh sách sản phẩm
+	                </div>
+	                <!-- /.panel-heading -->
+	                <div class="panel-body">
+	                	<h4 th:if="${#lists.isEmpty(listproduct)}">Chưa có sản phẩm nào</h4>
+
+	                    <table th:unless="${#lists.isEmpty(listproduct)}" width="100%" class="table table-striped table-bordered"
+	                    	id="dataTables-example">
+	                        <thead>
+	                            <tr>
+	                                <th width="5%">Mã</th>
+                                    <th width="20%">Sản phẩm</th>
+                                    <th width="15%">Hình sản phẩm</th>
+                                    <th width="5%">Giá bán</th>
+									<th width="15%">Danh mục sản phẩm</th>
+									<th width="15%">Ngày thêm</th>
+									<th width="15%">Ngày sửa</th>
+                                    <th width="10%">Tùy chọn</th>
+	                            </tr>
+	                        </thead>
+	                        <tbody>
+	                            <tr th:each="product : ${listproduct}">
+	                                <td th:text="${product.getProduct_id()}"></td>
+                                    <td><span th:text="${product.getName()}"></span></td>
+									<td> <img th:src="${product.getImage()}" width="50px" height="50px" /></td>
+                                    <td th:inline="text">[[${#numbers.formatInteger(product.getPrice(),3,'COMMA')}]] đ</td>
+                                    <td><span th:text="${product.getCategory()}"></span></td>
+                                    <td th:text="${product.getCreated_date()}"></td>
+                                    <td th:text="${product.getUpdated_date()}"></td>
+									<td>
+                                        <div class="dropdown">
+                                            <button class="btn btn-danger btn-sm dropdown-toggle" data-toggle="dropdown">
+                                                Tùy chọn
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                                <li>
+														<button class="btn btn-default btn-edit-product" th:attr="data-product=${product.getProduct_id()}">
+															<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+														</button>
+                                                </li>
+                                                <li>
+													<button class="btn btn-default btn-delete-product" th:attr="data-product=${product.getProduct_id()}">
+														<i class="fa fa-trash" aria-hidden="true"></i>
+													</button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+	                            </tr>
+	                        </tbody>
+	                    </table>
+	                    <!-- /.table-responsive -->
+	                </div>
+	                <!-- /.panel-body -->
+	            </div>
+	            <!-- /.panel -->
+	        </div>
+	        <!-- /.col-sm-12 -->
+	    </div>
+	    <!-- /.row -->
+
+		<div id="modal-create-product" class="modal fade" role="dialog">
+			<div class="modal-dialog modal-lg">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Product info</h4>
+					</div>
+					<div class="modal-body">
+
+						<div class="img-select-block margin-bottom-15">
+							<label>Product image</label><br/>
+							<img id="preview-product-img" th:src="@{/img/default.png}" />
+							<input type='file' id="input-select-img-product" />
+						</div>
+
+						<div class="form-group margin-bottom-15">
+							<label>Product name:</label>
+							<input type="text" class="form-control" id="input-product-name">
+						</div>
+
+						<div class="form-group margin-bottom-15">
+							<label for="product-category">Category:</label>
+							<select class="form-control" id="product-category">
+								<option th:each="category : ${categories}"
+										th:value="${category.getCategory_id()}" th:text="${category.getName()}"></option>
+							</select>
+						</div>
+
+						<div class="form-group margin-bottom-15">
+							<label>Product description:</label>
+							<textarea type="text" class="form-control" id="input-product-desc"></textarea>
+						</div>
+						<div class="form-group margin-bottom-15">
+							<label>Product price:</label>
+							<input type="text" class="form-control" id="input-product-price">
+						</div>
+
+						<div class="form-group">
+							<label>Product created date:</label>
+							<div class='input-group date' id='datepicker-created-date-product'>
+								<input type='text' class="form-control" />
+								<span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    			</span>
+							</div>
+						</div>
+						<div class="form-group" style="display: none;" id="form-update-date">
+							<label>Product update date:</label>
+							<div class='input-group date' id='datepicker-updated-date-product'>
+								<input type='text' class="form-control"/>
+								<span class="input-group-addon">
+									<span class="glyphicon glyphicon-calendar"></span>
+								</span>
+							</div>
+						</div>
+
+						<button class="btn btn-default btn-save-product">Save product</button>
+
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- /#page-wrapper -->
+
+</div>
+
+<script>
+<!-- Page-Level Demo Scripts - Tables - Use for reference -->
+ $(document).ready(function() {
+     $('#dataTables-example').DataTable({
+         responsive: true
+     });
+ });
+</script>
+
+
+</body>
+</html>

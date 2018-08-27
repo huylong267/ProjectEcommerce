@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="admin/layout :: head"></head>
+<body>
+
+<div id="wrapper">
+
+	<nav th:replace="admin/layout :: sidebar"></nav>
+
+	<div id="page-wrapper">
+		<div class="row">
+			<div class="col-sm-12">
+				<h3 class="page-header">Quản lý  chi tiết sản phẩm</h3>
+			</div>
+			<!-- /.col-sm-12 -->
+		</div>
+		<!-- /.row -->
+
+		<div class="row">
+			<div class="col-sm-12">
+				<!--<div th:if="${success}" class="row alert alert-success alert-dismissible">-->
+				<!--<button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>-->
+				<!--<span th:text="${success}"></span>-->
+				<!--</div>-->
+
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						Danh sách sản phẩm
+					</div>
+					<!-- /.panel-heading -->
+					<div class="panel-body">
+						<h4 th:if="${#lists.isEmpty(listproductdetail)}">Chưa có sản phẩm nào</h4>
+						<table th:unless="${#lists.isEmpty(listproductdetail)}" width="100%" class="table table-striped table-bordered"
+							   id="dataTables-example">
+							<thead>
+									<tr>
+										<th width="10%">Mã</th>
+										<th width="20%">Tên sản  phẩm</th>
+										<th width="20%">Kích cỡ</th>
+										<th width="20%">Màu </th>
+										<th width="10%">Số lượng</th>
+										<th width="20%">Tùy chọn</th>
+									</tr>
+							</thead>
+							<tbody>
+							<tr th:each="product : ${listproductdetail}">
+								<td><span th:text="${product.getProduct().getProduct_id()}"></span></td>
+								<td><span th:text="${product.getProduct()}"></span></td>
+								<td><span th:text="${product.getSize()}"></span></td>
+								<td><span th:text="${product.getColor()}"></span></td>
+								<td><span th:text="${product.getQuantity()}"></span></td>
+								<td>
+									<div class="dropdown">
+										<button class="btn btn-danger btn-sm dropdown-toggle" data-toggle="dropdown">
+											Tùy chọn
+											<span class="caret"></span>
+										</button>
+										<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+											<li>
+												<button class="btn btn-default btn-edit-product">
+													<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+												</button>
+											</li>
+											<li>
+												<button class="btn btn-default btn-delete-product" >
+													<i class="fa fa-trash" aria-hidden="true"></i>
+												</button>
+											</li>
+										</ul>
+									</div>
+								</td>
+							</tr>
+							</tbody>
+						</table>
+						<!-- /.table-responsive -->
+					</div>
+					<!-- /.panel-body -->
+				</div>
+				<!-- /.panel -->
+			</div>
+			<!-- /.col-sm-12 -->
+		</div>
+		<!-- /.row -->
+	</div>
+	<!-- /#page-wrapper -->
+
+</div>
+
+<script>
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    $(document).ready(function() {
+        $('#dataTables-example').DataTable({
+            responsive: true
+        });
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+
+ssquid:UselessImportCheck"HRemove this unused import 'com.fasterxml.jackson.annotation.JsonIgnore'.(ş‘‹„8Ô³§ÒÈ,
+rsquid:S00116"URename this field "product_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Îšßûüÿÿÿÿ
+psquid:S00117T"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ø†ç8’Õã˜È,
+msquid:S00100T"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ø†ç8’Õã˜È,
+}squid:UselessImportCheck"RRemove this unused import 'com.fasterxml.jackson.annotation.JsonIgnoreProperties'.(ô’ˆî8“šùÒÈ,
+msquid:S00100("NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÕŸÅõ8’Õã˜È,
+rsquid:S00100,"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(üŒ¸õúÿÿÿÿ8’Õã˜È,
+msquid:S00100P"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(öàÏÊ8’Õã˜È,
+psquid:S00117\"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´şÑÛ8’Õã˜È,
+msquid:S00100X"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ò³¡8’Õã˜È,
+msquid:S00100\"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´şÑÛ8’Õã˜È,
+tsquid:S00116"WRename this field "created_date" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·º¾õşÿÿÿÿ
+osquid:S00116"WRename this field "updated_date" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(úñš˜
+usquid:S00117,"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(üŒ¸õúÿÿÿÿ8’Õã˜È,

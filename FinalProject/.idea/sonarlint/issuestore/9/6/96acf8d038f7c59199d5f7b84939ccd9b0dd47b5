@@ -1,0 +1,7 @@
+
+rsquid:S00100&"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ýËß“þÿÿÿÿ8‹Ê˜ÒÈ,
+Osquid:UselessImportCheck"+Remove this unused import 'java.util.Date'.(¸…¼ü
+xsquid:S00116"[Rename this field "productdetail_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ý¡ÉÓýÿÿÿÿ
+rsquid:S00100""NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(øØâšúÿÿÿÿ8‹Ê˜ÒÈ,
+ssquid:UselessImportCheck"HRemove this unused import 'com.fasterxml.jackson.annotation.JsonIgnore'.(þ‘‹„8ýÉ¤ÒÈ,
+usquid:S00117&"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ýËß“þÿÿÿÿ8‹Ê˜ÒÈ,

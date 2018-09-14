@@ -1,21 +1,18 @@
 package application.model;
 
-import application.data.model.Color;
-import application.data.model.Product;
-import application.data.model.Size;
-import application.extension.CustomDateDeserializer;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-
-import java.util.Date;
-
 public class ProductDetailModel {
-
+    private int productdetail_id;
     private ProductNameModel product;
-    private SizeNameModel size;
-    private ColorNameModel color;
+    private SizeNameModel sizeDetail;
+    private ColorNameModel colorDetail;
     private int quantity;
     private String image;
+
+
+
+    public void setProductDetail_id(int productDetail_id) {
+        this.productdetail_id = productDetail_id;
+    }
 
     public String getImage() {
         return image;
@@ -33,20 +30,28 @@ public class ProductDetailModel {
         this.product = product;
     }
 
-    public SizeNameModel getSize() {
-        return size;
+    public int getProductdetail_id() {
+        return productdetail_id;
     }
 
-    public void setSize(SizeNameModel size) {
-        this.size = size;
+    public void setProductdetail_id(int productdetail_id) {
+        this.productdetail_id = productdetail_id;
     }
 
-    public ColorNameModel getColor() {
-        return color;
+    public SizeNameModel getSizeDetail() {
+        return sizeDetail;
     }
 
-    public void setColor(ColorNameModel color) {
-        this.color = color;
+    public void setSizeDetail(SizeNameModel sizeDetail) {
+        this.sizeDetail = sizeDetail;
+    }
+
+    public ColorNameModel getColorDetail() {
+        return colorDetail;
+    }
+
+    public void setColorDetail(ColorNameModel colorDetail) {
+        this.colorDetail = colorDetail;
     }
 
     public int getQuantity() {
@@ -55,5 +60,17 @@ public class ProductDetailModel {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    @Override
+    public String toString() {
+        return "ProductDetailModel{" +
+                "productDetail_id=" + productdetail_id +
+                ", product=" + product +
+                ", size=" + sizeDetail +
+                ", color=" + colorDetail +
+                ", quantity=" + quantity +
+                ", image='" + image + '\'' +
+                '}';
     }
 }

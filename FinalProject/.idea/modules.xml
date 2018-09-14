@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Desktop-FinalProject.iml" filepath="$PROJECT_DIR$/.idea/modules/Desktop-FinalProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DATNProject-FinalProject.iml" filepath="$PROJECT_DIR$/.idea/modules/DATNProject-FinalProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DATNProject-FinalProject_main.iml" filepath="$PROJECT_DIR$/.idea/modules/DATNProject-FinalProject_main.iml" group="FinalProject" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DATNProject-FinalProject_test.iml" filepath="$PROJECT_DIR$/.idea/modules/DATNProject-FinalProject_test.iml" group="FinalProject" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Desktop-FinalProject_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Desktop-FinalProject_main.iml" group="FinalProject" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Desktop-FinalProject_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Desktop-FinalProject_test.iml" group="FinalProject" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/FinalProject.iml" filepath="$PROJECT_DIR$/.idea/modules/FinalProject.iml" />

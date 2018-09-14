@@ -13,7 +13,8 @@ import javax.annotation.Resource;
 
 
 @SpringBootApplication
-public class Application implements CommandLineRunner {
+public class
+Application implements CommandLineRunner {
 
     private static final Logger logger = LogManager.getLogger(Application.class);
 

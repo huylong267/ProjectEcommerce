@@ -51,6 +51,10 @@ public class    ProductDetailApiController {
                             productDetailServiceImp.delete(detailExist.getProductdetail_id());
                             productDetailServiceImp.createDetail(productDetail);
                         }
+                        else {
+                            productDetail.setQuantity(product.getQuantity());
+                            productDetailServiceImp.createDetail(productDetail);
+                        }
                     }
 
                 }
@@ -69,15 +73,58 @@ public class    ProductDetailApiController {
         return result;
     }
 
-//    @PostMapping("/update-detail/{id}")
-//    public BaseApiResult updateDetail (@PathVariable("id") int productDetailId ,
-//                                       @RequestBody ProductDetailEditModel editModel){
-//
-//        DataApiResult result = new DataApiResult();
-//        if(!"".equals(editModel.getQuantity())){
-//
-//        }
-//    }
+    @PostMapping("/update-detail/{id}")
+    public BaseApiResult updateDetail (@PathVariable("id") int productDetailId ,
+                                       @RequestBody ProductDetailModel editModel){
 
+        DataApiResult result = new DataApiResult();
+        try {
+            if(!"".equals(editModel.getQuantity())){
+                ProductDetail productDetailExist = productDetailServiceImp.findOne(productDetailId);
+                if(productDetailExist == null){
+                    result.setMessage("productDetail null");
+                    result.setSuccess(false);
+                }else {
+                    productDetailExist.setProductdetail_id(editModel.getProductdetail_id());
+                    productDetailExist.setImage(editModel.getImage());
+                    productDetailExist.setQuantity(editModel.getQuantity());
+                    productDetailExist.setColor(colorServiceImp.findOneColor(editModel.getColorDetail().getColor_id()));
+                    productDetailExist.setSize(sizeServiceImp.findOneSize(editModel.getSizeDetail().getSize_id()));
+                    productDetailServiceImp.createDetail(productDetailExist);
+                    result.setSuccess(true);
+                    result.setData(productDetailExist);
+                    result.setMessage("Successfully");
+                }
+            }else {
+                result.setMessage("Fail");
+                result.setSuccess(false);
+            }
+        } catch (Exception e) {
+            result.setMessage("Fail");
+            result.setSuccess(false);
+        }
+        return result;
+    }
+    @GetMapping("/getdetailproduct/{id}")
+    public BaseApiResult getDetailProduct(@PathVariable int id){
+        DataApiResult result = new DataApiResult();
+        ProductDetail productDetail = productDetailServiceImp.findOne(id);
+        try {
+            if(productDetail == null){
+                result.setSuccess(false);
+                result.setMessage("Product Detail is null");
+            }else {
+                result.setMessage("Successfully");
+                result.setSuccess(true);
+                ModelMapper mapper = new ModelMapper();
+                ProductDetailModel productDetailModel = mapper.map(productDetail,ProductDetailModel.class);
+                result.setData(productDetailModel);
+            }
+        } catch (Exception e) {
+            result.setSuccess(false);
+            result.setMessage("Product Detail is catch");
+        }
+        return  result;
+    }
 }
 

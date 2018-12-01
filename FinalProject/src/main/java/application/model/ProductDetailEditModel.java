@@ -1,20 +1,13 @@
 package application.model;
 
 public class ProductDetailEditModel {
-    private int productDetail_id;
-    private int product_id;
+
     private int color_id;
     private int size_id;
     private int quantity;
     private String image;
 
-    public int getProductDetail_id() {
-        return productDetail_id;
-    }
 
-    public void setProductDetail_id(int productDetail_id) {
-        this.productDetail_id = productDetail_id;
-    }
 
     public String getImage() {
         return image;
@@ -24,13 +17,7 @@ public class ProductDetailEditModel {
         this.image = image;
     }
 
-    public int getProduct_id() {
-        return product_id;
-    }
 
-    public void setProduct_id(int product_id) {
-        this.product_id = product_id;
-    }
 
     public int getColor_id() {
         return color_id;

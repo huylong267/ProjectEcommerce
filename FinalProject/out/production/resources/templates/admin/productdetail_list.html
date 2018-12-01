@@ -75,7 +75,7 @@
 							</tbody>
 						</table>
 						<!-- /.table-responsive -->
-						<div id="modal-create-product-detail" class="modal fade" role="dialog">
+						<div id="modal-create-product-detail-edit" class="modal fade" role="dialog">
 							<div class="modal-dialog modal-lg">
 								<!-- Modal content-->
 								<div class="modal-content">
@@ -86,33 +86,33 @@
 									<div class="modal-body">
 										<div class="img-select-block margin-bottom-15">
 											<label>Product image</label><br/>
-											<img id="preview-product-detail-img" th:src="@{/img/default.png}" />
-											<input type='file' id="input-select-img-product-detail" />
+											<img id="preview-product-detail-img-edit" th:src="@{/img/default.png}" />
+											<input type='file' id="input-select-img-product-detail-edit" />
 										</div>
 										<div class="form-group margin-bottom-15">
-											<label for="product-category">Kích cỡ:</label>
-											<select class="form-control" id="productdetail-size">
+											<label>Kích cỡ:</label>
+											<select class="form-control" id="productdetail-size-edit">
 												<option th:each="size : ${sizes}"
-														th:value="${size.getSize()}"
+														th:value="${size.getSize_id()}"
 														th:text="${size.getName()}"></option>
 											</select>
 										</div>
 
 
 										<div class="form-group margin-bottom-15">
-											<label for="product-category">Màu:</label>
-											<select class="form-control" id="productdetail-color">
+											<label >Màu:</label>
+											<select class="form-control" id="productdetail-color-edit">
 												<option th:each="color : ${colors}"
-														th:value="${color.getColor()}"
+														th:value="${color.getColor_id()}"
 														th:text="${color.getName()}"></option>
 											</select>
 										</div>
 										<div class="form-group margin-bottom-15">
 											<label>Số lượng:</label>
-											<input type="text" class="form-control" id="input-productdetail-quantity">
+											<input type="text" class="form-control" id="input-productdetail-quantity-edit">
 										</div>
 
-										<button class="btn btn-default btn-save-productdetail">Save product</button>
+										<button class="btn btn-default btn-save-productdetail-edit">Save product</button>
 
 									</div>
 									<div class="modal-footer">

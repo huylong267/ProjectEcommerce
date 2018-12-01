@@ -9,6 +9,7 @@ public interface iProductDetailService {
     void createDetail (ProductDetail productDetail);
     List<ProductDetail> findAllDetail();
     List<ProductDetail> findByProductId(int id);
+    void updateDetail(ProductDetail productDetail);
     void delete(int id);
     ProductDetail getByDetail(int productId, int sizeId, int colorId);
 

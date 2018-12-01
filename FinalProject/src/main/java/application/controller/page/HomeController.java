@@ -12,6 +12,8 @@ import application.data.service.page.OrderService;
 import application.model.NewsVm;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -32,7 +34,11 @@ public class HomeController {
     private NewsServiceImp newsServiceImp;
     @GetMapping("/")
     public String home(Model model){
-
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if(principal instanceof UserDetails){
+            model.addAttribute("username",((UserDetails) principal).getUsername());
+            System.out.println(((UserDetails) principal).getUsername());
+        }
         return "home";
     }
     @GetMapping(path="/list-news")

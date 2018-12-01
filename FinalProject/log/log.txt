@@ -3741,3 +3741,117 @@
 2018-Sep-14 00:28:04 AM [http-nio-1111-exec-3] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=44, product=quần jogger, size=L, color=Đỏ, quantity=4, image='/link/1535396542-anh3.jpg'}
 2018-Sep-14 00:28:04 AM [http-nio-1111-exec-3] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=45, product=quần jogger, size=L, color=Xanh, quantity=2, image='/link/1535396898-anh6.jpg'}
 2018-Sep-14 00:28:04 AM [http-nio-1111-exec-3] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=46, product=quần jeans, size=M, color=Xanh, quantity=3, image='/link/1535995722-anh1.jpg'}
+2018-Sep-15 18:03:30 PM [main] DEBUG application.Application - Start main ---------------- 
+2018-Sep-15 18:03:30 PM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Sep-15 18:03:56 PM [http-nio-1111-exec-8] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=41, product=quần jeans, size=L, color=Đỏ, quantity=13, image='/link/1535396542-anh3.jpg'}
+2018-Sep-15 18:03:56 PM [http-nio-1111-exec-8] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=44, product=quần jogger, size=L, color=Đỏ, quantity=4, image='/link/1535396542-anh3.jpg'}
+2018-Sep-15 18:03:56 PM [http-nio-1111-exec-8] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=45, product=quần jogger, size=L, color=Xanh, quantity=2, image='/link/1535396898-anh6.jpg'}
+2018-Sep-15 18:03:56 PM [http-nio-1111-exec-8] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=46, product=quần jeans, size=M, color=Xanh, quantity=3, image='/link/1535995722-anh1.jpg'}
+2018-Sep-15 18:04:14 PM [http-nio-1111-exec-2] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=41, product=quần jeans, size=L, color=Đỏ, quantity=13, image='/link/1535396542-anh3.jpg'}
+2018-Sep-15 18:04:14 PM [http-nio-1111-exec-2] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=44, product=quần jogger, size=L, color=Đỏ, quantity=4, image='/link/1535396542-anh3.jpg'}
+2018-Sep-15 18:04:14 PM [http-nio-1111-exec-2] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=45, product=quần jogger, size=L, color=Xanh, quantity=2, image='/link/1535396898-anh6.jpg'}
+2018-Sep-15 18:04:14 PM [http-nio-1111-exec-2] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=46, product=quần jeans, size=M, color=Xanh, quantity=3, image='/link/1535995722-anh1.jpg'}
+2018-Sep-15 20:59:41 PM [http-nio-1111-exec-2] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=41, product=quần jeans, size=L, color=Đỏ, quantity=13, image='/link/1535396542-anh3.jpg'}
+2018-Sep-15 20:59:41 PM [http-nio-1111-exec-2] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=44, product=quần jogger, size=L, color=Đỏ, quantity=4, image='/link/1535396542-anh3.jpg'}
+2018-Sep-15 20:59:41 PM [http-nio-1111-exec-2] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=45, product=quần jogger, size=L, color=Xanh, quantity=2, image='/link/1535396898-anh6.jpg'}
+2018-Sep-15 20:59:41 PM [http-nio-1111-exec-2] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=46, product=quần jeans, size=M, color=Xanh, quantity=3, image='/link/1535995722-anh1.jpg'}
+2018-Sep-16 00:25:38 AM [main] DEBUG application.Application - Start main ---------------- 
+2018-Sep-16 00:25:39 AM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Sep-16 00:26:22 AM [http-nio-1111-exec-9] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=41, product=quần jeans, size=L, color=Đỏ, quantity=13, image='/link/1535396542-anh3.jpg'}
+2018-Sep-16 00:26:22 AM [http-nio-1111-exec-9] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=44, product=quần jogger, size=L, color=Đỏ, quantity=4, image='/link/1535396542-anh3.jpg'}
+2018-Sep-16 00:26:22 AM [http-nio-1111-exec-9] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=45, product=quần jogger, size=L, color=Xanh, quantity=2, image='/link/1535396898-anh6.jpg'}
+2018-Sep-16 00:26:22 AM [http-nio-1111-exec-9] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=46, product=quần jeans, size=M, color=Xanh, quantity=3, image='/link/1535995722-anh1.jpg'}
+2018-Sep-16 13:33:51 PM [main] DEBUG application.Application - Start main ---------------- 
+2018-Sep-16 13:33:52 PM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Sep-16 13:35:34 PM [http-nio-1111-exec-3] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=41, product=quần jeans, size=L, color=Đỏ, quantity=13, image='/link/1535396542-anh3.jpg'}
+2018-Sep-16 13:35:34 PM [http-nio-1111-exec-3] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=44, product=quần jogger, size=L, color=Đỏ, quantity=4, image='/link/1535396542-anh3.jpg'}
+2018-Sep-16 13:35:34 PM [http-nio-1111-exec-3] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=45, product=quần jogger, size=L, color=Xanh, quantity=2, image='/link/1535396898-anh6.jpg'}
+2018-Sep-16 13:35:34 PM [http-nio-1111-exec-3] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=46, product=quần jeans, size=M, color=Xanh, quantity=3, image='/link/1535995722-anh1.jpg'}
+2018-Sep-16 13:36:36 PM [http-nio-1111-exec-4] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=41, product=quần jeans, size=L, color=Đỏ, quantity=13, image='/link/1535396542-anh3.jpg'}
+2018-Sep-16 13:36:36 PM [http-nio-1111-exec-4] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=44, product=quần jogger, size=L, color=Đỏ, quantity=4, image='/link/1535396542-anh3.jpg'}
+2018-Sep-16 13:36:36 PM [http-nio-1111-exec-4] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=45, product=quần jogger, size=L, color=Xanh, quantity=2, image='/link/1535396898-anh6.jpg'}
+2018-Sep-16 13:36:36 PM [http-nio-1111-exec-4] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=46, product=quần jeans, size=M, color=Xanh, quantity=3, image='/link/1535995722-anh1.jpg'}
+2018-Sep-16 13:38:21 PM [http-nio-1111-exec-9] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=41, product=quần jeans, size=L, color=Đỏ, quantity=13, image='/link/1535396542-anh3.jpg'}
+2018-Sep-16 13:38:21 PM [http-nio-1111-exec-9] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=44, product=quần jogger, size=L, color=Đỏ, quantity=4, image='/link/1535396542-anh3.jpg'}
+2018-Sep-16 13:38:21 PM [http-nio-1111-exec-9] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=45, product=quần jogger, size=L, color=Xanh, quantity=2, image='/link/1535396898-anh6.jpg'}
+2018-Sep-16 13:38:21 PM [http-nio-1111-exec-9] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=46, product=quần jeans, size=M, color=Xanh, quantity=3, image='/link/1535995722-anh1.jpg'}
+2018-Sep-16 13:43:56 PM [main] DEBUG application.Application - Start main ---------------- 
+2018-Sep-16 13:43:56 PM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Sep-16 13:44:08 PM [http-nio-1111-exec-1] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=41, product=quần jeans, size=application.model.SizeNameModel@11c3672, color=application.model.ColorNameModel@3eb233, quantity=13, image='/link/1535396542-anh3.jpg'}
+2018-Sep-16 13:44:08 PM [http-nio-1111-exec-1] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=44, product=quần jogger, size=application.model.SizeNameModel@67fc9b, color=application.model.ColorNameModel@10a640f, quantity=4, image='/link/1535396542-anh3.jpg'}
+2018-Sep-16 13:44:08 PM [http-nio-1111-exec-1] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=45, product=quần jogger, size=application.model.SizeNameModel@1ac37ca, color=application.model.ColorNameModel@bcf875, quantity=2, image='/link/1535396898-anh6.jpg'}
+2018-Sep-16 13:44:08 PM [http-nio-1111-exec-1] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=46, product=quần jeans, size=application.model.SizeNameModel@13fc515, color=application.model.ColorNameModel@1ed17a9, quantity=3, image='/link/1535995722-anh1.jpg'}
+2018-Sep-16 13:44:26 PM [main] DEBUG application.Application - Start main ---------------- 
+2018-Sep-16 13:44:27 PM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Sep-16 13:44:37 PM [http-nio-1111-exec-1] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=41, product=quần jeans, size=L, color=Đỏ, quantity=13, image='/link/1535396542-anh3.jpg'}
+2018-Sep-16 13:44:37 PM [http-nio-1111-exec-1] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=44, product=quần jogger, size=L, color=Đỏ, quantity=4, image='/link/1535396542-anh3.jpg'}
+2018-Sep-16 13:44:37 PM [http-nio-1111-exec-1] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=45, product=quần jogger, size=L, color=Xanh, quantity=2, image='/link/1535396898-anh6.jpg'}
+2018-Sep-16 13:44:37 PM [http-nio-1111-exec-1] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=46, product=quần jeans, size=M, color=Xanh, quantity=3, image='/link/1535995722-anh1.jpg'}
+2018-Sep-16 13:52:09 PM [http-nio-1111-exec-1] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=41, product=quần jeans, size=L, color=Đỏ, quantity=13, image='/link/1535396542-anh3.jpg'}
+2018-Sep-16 13:52:09 PM [http-nio-1111-exec-1] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=44, product=quần jogger, size=L, color=Đỏ, quantity=4, image='/link/1535396542-anh3.jpg'}
+2018-Sep-16 13:52:09 PM [http-nio-1111-exec-1] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=45, product=quần jogger, size=L, color=Xanh, quantity=2, image='/link/1535396898-anh6.jpg'}
+2018-Sep-16 13:52:09 PM [http-nio-1111-exec-1] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=46, product=quần jeans, size=M, color=Xanh, quantity=3, image='/link/1535995722-anh1.jpg'}
+2018-Sep-16 13:52:11 PM [http-nio-1111-exec-3] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=41, product=quần jeans, size=L, color=Đỏ, quantity=13, image='/link/1535396542-anh3.jpg'}
+2018-Sep-16 13:52:11 PM [http-nio-1111-exec-3] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=44, product=quần jogger, size=L, color=Đỏ, quantity=4, image='/link/1535396542-anh3.jpg'}
+2018-Sep-16 13:52:11 PM [http-nio-1111-exec-3] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=45, product=quần jogger, size=L, color=Xanh, quantity=2, image='/link/1535396898-anh6.jpg'}
+2018-Sep-16 13:52:11 PM [http-nio-1111-exec-3] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=46, product=quần jeans, size=M, color=Xanh, quantity=3, image='/link/1535995722-anh1.jpg'}
+2018-Sep-16 13:55:43 PM [http-nio-1111-exec-10] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=41, product=quần jeans, size=L, color=Đỏ, quantity=13, image='/link/1535396542-anh3.jpg'}
+2018-Sep-16 13:55:43 PM [http-nio-1111-exec-10] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=44, product=quần jogger, size=L, color=Đỏ, quantity=4, image='/link/1535396542-anh3.jpg'}
+2018-Sep-16 13:55:43 PM [http-nio-1111-exec-10] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=45, product=quần jogger, size=L, color=Xanh, quantity=2, image='/link/1535396898-anh6.jpg'}
+2018-Sep-16 13:55:43 PM [http-nio-1111-exec-10] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=46, product=quần jeans, size=M, color=Xanh, quantity=3, image='/link/1535995722-anh1.jpg'}
+2018-Sep-16 13:58:54 PM [http-nio-1111-exec-10] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=41, product=quần jeans, size=L, color=Đỏ, quantity=13, image='/link/1535396542-anh3.jpg'}
+2018-Sep-16 13:58:54 PM [http-nio-1111-exec-10] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=44, product=quần jogger, size=L, color=Đỏ, quantity=4, image='/link/1535396542-anh3.jpg'}
+2018-Sep-16 13:58:54 PM [http-nio-1111-exec-10] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=45, product=quần jogger, size=L, color=Xanh, quantity=2, image='/link/1535396898-anh6.jpg'}
+2018-Sep-16 13:58:54 PM [http-nio-1111-exec-10] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=46, product=quần jeans, size=M, color=Xanh, quantity=3, image='/link/1535995722-anh1.jpg'}
+2018-Sep-16 14:02:19 PM [http-nio-1111-exec-9] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=41, product=quần jeans, size=L, color=Đỏ, quantity=13, image='/link/1535396542-anh3.jpg'}
+2018-Sep-16 14:02:19 PM [http-nio-1111-exec-9] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=44, product=quần jogger, size=L, color=Đỏ, quantity=4, image='/link/1535396542-anh3.jpg'}
+2018-Sep-16 14:02:19 PM [http-nio-1111-exec-9] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=45, product=quần jogger, size=L, color=Xanh, quantity=2, image='/link/1535396898-anh6.jpg'}
+2018-Sep-16 14:02:19 PM [http-nio-1111-exec-9] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=46, product=quần jeans, size=M, color=Xanh, quantity=3, image='/link/1535995722-anh1.jpg'}
+2018-Sep-16 14:04:20 PM [http-nio-1111-exec-1] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=41, product=quần jeans, size=L, color=Đỏ, quantity=13, image='/link/1535396542-anh3.jpg'}
+2018-Sep-16 14:04:20 PM [http-nio-1111-exec-1] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=44, product=quần jogger, size=L, color=Đỏ, quantity=4, image='/link/1535396542-anh3.jpg'}
+2018-Sep-16 14:04:20 PM [http-nio-1111-exec-1] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=45, product=quần jogger, size=L, color=Xanh, quantity=2, image='/link/1535396898-anh6.jpg'}
+2018-Sep-16 14:04:20 PM [http-nio-1111-exec-1] INFO  application.controller.admin.AdminProductDetailController - ProductProductDetailModel{productDetail_id=46, product=quần jeans, size=M, color=Xanh, quantity=3, image='/link/1535995722-anh1.jpg'}
+2018-Sep-16 14:06:38 PM [main] DEBUG application.Application - Start main ---------------- 
+2018-Sep-16 14:06:39 PM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Sep-16 14:19:34 PM [main] DEBUG application.Application - Start main ---------------- 
+2018-Sep-16 14:19:34 PM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Sep-16 14:30:34 PM [main] DEBUG application.Application - Start main ---------------- 
+2018-Sep-16 14:30:34 PM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Sep-16 14:31:12 PM [main] DEBUG application.Application - Start main ---------------- 
+2018-Sep-16 14:31:12 PM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Sep-16 14:48:52 PM [main] DEBUG application.Application - Start main ---------------- 
+2018-Sep-16 14:48:52 PM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Sep-16 14:52:27 PM [main] DEBUG application.Application - Start main ---------------- 
+2018-Sep-16 14:52:27 PM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Sep-16 15:35:42 PM [main] DEBUG application.Application - Start main ---------------- 
+2018-Sep-16 15:35:43 PM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Sep-16 15:37:25 PM [main] DEBUG application.Application - Start main ---------------- 
+2018-Sep-16 15:37:25 PM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Sep-16 15:38:52 PM [main] DEBUG application.Application - Start main ---------------- 
+2018-Sep-16 15:38:52 PM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Sep-16 16:01:38 PM [main] DEBUG application.Application - Start main ---------------- 
+2018-Sep-16 16:01:38 PM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Sep-16 16:03:12 PM [main] DEBUG application.Application - Start main ---------------- 
+2018-Sep-16 16:03:12 PM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Sep-16 16:07:40 PM [main] DEBUG application.Application - Start main ---------------- 
+2018-Sep-16 16:07:41 PM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Sep-16 16:20:34 PM [main] DEBUG application.Application - Start main ---------------- 
+2018-Sep-16 16:20:34 PM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Sep-16 16:23:19 PM [main] DEBUG application.Application - Start main ---------------- 
+2018-Sep-16 16:23:19 PM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Sep-16 16:24:43 PM [main] DEBUG application.Application - Start main ---------------- 
+2018-Sep-16 16:24:43 PM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Sep-16 16:28:31 PM [main] DEBUG application.Application - Start main ---------------- 
+2018-Sep-16 16:28:31 PM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Sep-16 16:42:06 PM [main] DEBUG application.Application - Start main ---------------- 
+2018-Sep-16 16:42:06 PM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Sep-16 16:43:15 PM [main] DEBUG application.Application - Start main ---------------- 
+2018-Sep-16 16:43:15 PM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Sep-23 19:25:01 PM [main] DEBUG application.Application - Start main ---------------- 
+2018-Sep-23 19:25:02 PM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Nov-24 00:49:03 AM [main] DEBUG application.Application - Start main ---------------- 
+2018-Nov-24 00:49:03 AM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Nov-26 00:30:24 AM [main] DEBUG application.Application - Start main ---------------- 
+2018-Nov-26 00:30:24 AM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Nov-26 01:33:07 AM [main] DEBUG application.Application - Start main ---------------- 
+2018-Nov-26 01:33:08 AM [restartedMain] DEBUG application.Application - Start main ---------------- 

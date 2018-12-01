@@ -37,6 +37,11 @@ public class ProductDetailServiceImp implements iProductDetailService {
     }
 
     @Override
+    public void updateDetail(ProductDetail productDetail) {
+        iProductDetailRepository.save(productDetail);
+    }
+
+    @Override
     public void delete(int id) {
         iProductDetailRepository.delete(id);
     }

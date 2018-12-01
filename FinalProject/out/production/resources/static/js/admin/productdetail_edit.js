@@ -1,24 +1,24 @@
 $(document).ready(function () {
-    var dataProductDT = {};
+    var dataProductDTEdit = {};
     function readURL(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
             reader.onload = function(e) {
-                $('#preview-product-detail-img').attr('src', e.target.result);
+                $('#preview-product-detail-img-edit').attr('src', e.target.result);
             }
             reader.readAsDataURL(input.files[0]);
         }
     }
-    $("#input-select-img-product-detail").change(function() {
+    $("#input-select-img-product-detail-edit").change(function() {
         readURL(this);
         var formData = new FormData();
         NProgress.start();
-        formData.append('file', $("#input-select-img-product-detail")[0].files[0]);
+        formData.append('file', $("#input-select-img-product-detail-edit")[0].files[0]);
         axios.post("/api/upload/upload-image", formData).then(function(res){
             NProgress.done();
             if(res.data.success) {
-                $('#preview-product-detail-img').attr('src', res.data.link);
-                dataProductDT = {
+                $('#preview-product-detail-img-edit').attr('src', res.data.link);
+                dataProductDTEdit = {
                     image: res.data.link
                 };
             }
@@ -32,20 +32,21 @@ $(document).ready(function () {
         axios.get("/api/productdetail/getdetailproduct/"+pddInfo).then(function (res) {
             NProgress.done();
             if(res.data.success){
-                dataProductDT.id = res.data.data.productdetail_id;
-                dataProductDT.image = res.data.data.image;
-                $("#input-select-img-product-detail").attr('src',dataProductDT.image);
-                $('#productdetail-size').val(res.data.data.sizeDetail.size_id);
-                $('#productdetail-color').val(res.data.data.colorDetail.color_id);
-                $('#input-productdetail-quantity').val(res.data.data.quantity);
-                $("#modal-create-product-detail").modal();
+                dataProductDTEdit.id = res.data.data.productdetail_id;
+                dataProductDTEdit.image = res.data.data.image;
+                $("#preview-product-detail-img-edit").attr('src',dataProductDTEdit.image);
+                $('#productdetail-size-edit').val(res.data.data.sizeDetail.size_id);
+                $('#productdetail-color-edit').val(res.data.data.colorDetail.color_id);
+                $('#input-productdetail-quantity-edit').val(res.data.data.quantity);
+                $("#modal-create-product-detail-edit").modal();
             }
         }, function(err){
             NProgress.done();
         })
     });
-    $(".btn-save-productdetail").on("click", function () {
-        if($("#input-productdetail-quantity").val() === "") {
+    $(".btn-save-productdetail-edit").on("click", function () {
+
+        if($("#input-productdetail-quantity-edit").val() === "") {
             swal(
                 'Error',
                 'You need to fill all values',
@@ -53,16 +54,14 @@ $(document).ready(function () {
             );
             return;
         }
-        console.log(productId);
-        dataProductDT.product_id = productId;
-        dataProductDT.size_id = $('#productdetail-size').val();
-        dataProductDT.color_id = $('#productdetail-color').val();
-        dataProductDT.quantity = $("#input-productdetail-quantity").val();
+
+        dataProductDTEdit.size_id = $('#productdetail-size-edit').val();
+        dataProductDTEdit.color_id = $('#productdetail-color-edit').val();
+        dataProductDTEdit.quantity = $("#input-productdetail-quantity-edit").val();
         NProgress.start();
-           linkPost = "/api/product/update-product/" + dataProduct.id;
-
-
-        axios.post(linkPost, dataProductDT).then(function(res){
+        var  linkPost = "/api/productdetail/update-detail/" + dataProductDTEdit.id ;
+        console.log(dataProductDTEdit);
+        axios.post(linkPost, dataProductDTEdit).then(function(res){
             NProgress.done();
             if(res.data.success) {
                 swal(
@@ -70,7 +69,7 @@ $(document).ready(function () {
                     res.data.message,
                     'success'
                 ).then(function() {
-                    window.location.replace("/admin/productdetail/getListproductDetail")
+                    location.reload();
                 });
             } else {
                 swal(
@@ -88,4 +87,46 @@ $(document).ready(function () {
             );
         })
     });
-})
+
+    $(".btn-delete-product-detail").on("click", function () {
+        var pdInfo = $(this).data("productdetail");
+        swal({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            type: 'warning',
+            showCancelButton: true
+        }).then(function(result) {
+            if (result.value) {
+                NProgress.start();
+                axios.post("/api/productdetail/delete-productdetail", {
+                    productdetail_id: pdInfo
+                }).then(function(res){
+                    NProgress.done();
+                    if(res.data.success) {
+                        swal(
+                            'Good job!',
+                            res.data.message,
+                            'success'
+                        ).then(function() {
+                            location.reload();
+                        });
+                    } else {
+                        swal(
+                            'Error',
+                            res.data.message,
+                            'error'
+                        );
+                    }
+                }, function(err){
+                    NProgress.done();
+                    swal(
+                        'Error',
+                        'Some error when saving product',
+                        'error'
+                    );
+                })
+            }
+        })
+    });
+
+});

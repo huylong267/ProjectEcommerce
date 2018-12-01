@@ -8,21 +8,22 @@ import application.data.repository.auth.iUserRepository;
 import application.data.service.auth.UserServiceImp;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.sql.Date;
 import java.util.HashSet;
 
 @Controller
+@SessionAttributes("username")
 public class UserController {
     @Autowired
     private iUserRepository userRepository;
@@ -45,9 +46,7 @@ public class UserController {
 
     @GetMapping("/register")
     public String register(Model model){
-
             model.addAttribute("user",new User());
-
         return "register";
     }
     @GetMapping("/admin")

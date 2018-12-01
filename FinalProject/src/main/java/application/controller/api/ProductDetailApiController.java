@@ -1,13 +1,11 @@
 package application.controller.api;
 
-import application.data.model.Product;
 import application.data.model.ProductDetail;
 import application.data.service.page.ColorServiceImp;
 import application.data.service.page.ProductDetailServiceImp;
 import application.data.service.page.ProductServiceImp;
 import application.data.service.page.SizeServiceImp;
 import application.model.*;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -73,9 +71,9 @@ public class    ProductDetailApiController {
         return result;
     }
 
-    @PostMapping("/update-detail/{id}")
-    public BaseApiResult updateDetail (@PathVariable("id") int productDetailId ,
-                                       @RequestBody ProductDetailModel editModel){
+    @PostMapping("/update-detail/{productDetailId}")
+    public BaseApiResult updateDetail (@PathVariable int productDetailId ,
+                                       @RequestBody ProductDetailEditModel editModel){
 
         DataApiResult result = new DataApiResult();
         try {
@@ -85,12 +83,11 @@ public class    ProductDetailApiController {
                     result.setMessage("productDetail null");
                     result.setSuccess(false);
                 }else {
-                    productDetailExist.setProductdetail_id(editModel.getProductdetail_id());
                     productDetailExist.setImage(editModel.getImage());
                     productDetailExist.setQuantity(editModel.getQuantity());
-                    productDetailExist.setColor(colorServiceImp.findOneColor(editModel.getColorDetail().getColor_id()));
-                    productDetailExist.setSize(sizeServiceImp.findOneSize(editModel.getSizeDetail().getSize_id()));
-                    productDetailServiceImp.createDetail(productDetailExist);
+                    productDetailExist.setColor(colorServiceImp.findOneColor(editModel.getColor_id()));
+                    productDetailExist.setSize(sizeServiceImp.findOneSize(editModel.getSize_id()));
+                    productDetailServiceImp.updateDetail(productDetailExist);
                     result.setSuccess(true);
                     result.setData(productDetailExist);
                     result.setMessage("Successfully");
@@ -100,7 +97,7 @@ public class    ProductDetailApiController {
                 result.setSuccess(false);
             }
         } catch (Exception e) {
-            result.setMessage("Fail");
+            result.setMessage("FAIL CATCH");
             result.setSuccess(false);
         }
         return result;
@@ -125,6 +122,20 @@ public class    ProductDetailApiController {
             result.setMessage("Product Detail is catch");
         }
         return  result;
+    }
+
+    @PostMapping("/delete-productdetail")
+    public DataApiResult deleteProductDetail(@RequestBody ProductDetaiDeleteModel deleteModel){
+        DataApiResult result = new DataApiResult();
+        try {
+            productDetailServiceImp.delete(deleteModel.getProductdetail_id());
+            result.setSuccess(true);
+            result.setMessage("Delete model successfully");
+        } catch (Exception e) {
+            result.setSuccess(false);
+            result.setMessage("Delete model fail");
+        }
+        return result;
     }
 }
 

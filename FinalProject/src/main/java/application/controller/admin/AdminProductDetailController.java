@@ -48,9 +48,10 @@ public class AdminProductDetailController {
         for(ProductDetail product : products){
             ProductDetailModel productDetailModel = modelMapper.map(product,ProductDetailModel.class);
             productDetailModels.add(productDetailModel);
-            logger.info("Product{}",productDetailModel);
         }
         model.addAttribute("listproductdetail",productDetailModels);
+        model.addAttribute("colors",colorServiceImp.findAllColor());
+        model.addAttribute("sizes",sizeServiceImp.findAllSize());
         return "admin/productdetail_list";
     }
 }

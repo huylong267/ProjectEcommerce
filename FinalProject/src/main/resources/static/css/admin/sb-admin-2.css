@@ -432,3 +432,21 @@ table.dataTable thead .sorting:after {
     border-left-width: 0;
   }
 }
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 100px;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 10%;
+  padding: 5px 10px;
+  font-size: 14px;
+  text-align: left;
+  list-style: none;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border-radius: 4px;
+
+
+}

@@ -79,8 +79,14 @@ public class WebSecurityConfig  extends WebSecurityConfigurerAdapter {
                 .logoutSuccessUrl("/")
                 .permitAll()
                 .and()
-            .exceptionHandling()
-                .accessDeniedPage("/403");
+                .exceptionHandling()
+                .accessDeniedPage("/403")
+                .and()
+                .sessionManagement().sessionFixation().newSession()
+                .sessionAuthenticationErrorUrl("/login")
+                .invalidSessionUrl("/login")
+                .maximumSessions(-1) // Number of concurrent session
+                .expiredUrl("/login");
 
     }
 

@@ -37,7 +37,6 @@ public class HomeController {
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         if(principal instanceof UserDetails){
             model.addAttribute("username",((UserDetails) principal).getUsername());
-            System.out.println(((UserDetails) principal).getUsername());
         }
         return "home";
     }

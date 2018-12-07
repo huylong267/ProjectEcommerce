@@ -1,8 +1,0 @@
-
-vsquid:S00116
-"YRename this field "orderdetail_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸«ã¸ûÿÿÿÿ
-fsquid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’´Œ“
-bsquid:CommentedOutCodeLine'"<This block of commented-out lines of code should be removed.(©ÐÃ
-isquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’´Œ“
-ksquid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÙüÅˆúÿÿÿÿ
-bsquid:CommentedOutCodeLine+"<This block of commented-out lines of code should be removed.(÷¼Øä

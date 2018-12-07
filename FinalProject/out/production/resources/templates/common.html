@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head >
-    <div th:fragment="head">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head  th:fragment="head">
         <meta charset="UTF-8">
         <title>Document</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -14,8 +13,8 @@
         <script type="text/javascript">
             new WOW().init();
         </script>
-    </div>
-    <link rel="stylesheet" th:href="@{./css/home.css}">
+        <link rel="stylesheet" th:href="@{./css/home.css}">
+</head>
 <body>
 <div class="header" th:fragment="header">
     <div class="top-header">
@@ -52,24 +51,35 @@
                         <a th:href="@{/list-news}">Tin tức</a>
                     </li>
                     <li>
-                        <a href="#">Giới thiệu</a>
-                    </li>
-                    <li>
-                        <a href="blog.html">Hệ thống cửa hàng</a>
-                    </li>
-                    <li class="drop_menu">
-                        <a href="contact.html">Tài khoản <i class="fa fa-sort-desc" aria-hidden="true"></i></a>
-                        <div class="cap2" >
-                            <ul >
-                                <li><a href="login.html">Đăng nhập</a></li>
-                                <li><a href="register.html">Đăng kí</a></li>
-
-                            </ul>
-                        </div>
+                        <a th:href="@{/lienhe}">Giới thiệu</a>
                     </li>
                     <li>
                         <a href="#">Giỏ hàng</a>
                     </li>
+
+                    <li class="drop_menu" id="drop-menu-logged" sec:authorize="!isAuthenticated()" th:if="${username}">
+                        <a href="contact.html"  sec:authentication="name" th:text="${username}"><i class="fa fa-sort-desc" aria-hidden="true"></i></a>
+                        <div class="cap2" >
+                            <ul >
+                                <li><a>
+                                    <span>Chỉnh sửa</span>
+                                </a></li>
+                                <li><a th:href="@{/logout}">Đăng xuất</a></li>
+                            </ul>
+                        </div>
+
+                    </li>
+                    <li class="drop_menu" id="drop-menu-loggin" sec:authorize="!isAuthenticated()" th:unless="${username}">
+                        <a >Tài khoản <i class="fa fa-sort-desc" aria-hidden="true"></i></a>
+                        <div class="cap2" >
+                            <ul >
+                                <li><a  href="login.html">Đăng nhập</a></li>
+                                <li><a href="register.html">Đăng kí</a></li>
+                            </ul>
+                        </div>
+
+                    </li>
+
 
                 </ul>
 
@@ -93,17 +103,14 @@
                         <a th:href="@{/list-news}">Tin tức</a>
                     </li>
                     <li>
-                        <a href="#">Giới thiệu</a>
-                    </li>
-                    <li>
-                        <a href="blog.html">Hệ thống cửa hàng</a>
+                        <a th:href="@{/lienhe}">Giới thiệu</a>
                     </li>
                     <li class="drop_menu">
-                        <a href="#">Tài khoản <strong>></strong></a>
+                        <a>Tài khoản <strong>></strong></a>
                         <div class="cap2-2" >
                             <ul >
                                 <li><a href="login.html">Đăng nhập</a></li>
-                                <li><a href="register.html">Đăng kí</a></li>
+                                <li><a th:href="@{/register}">Đăng kí</a></li>
                             </ul>
                         </div>
                     </li>
@@ -233,4 +240,9 @@
     </div>
 </div>
 </body>
+<script>
+        $(document).ready(function () {
+
+        });
+</script>
 </html>

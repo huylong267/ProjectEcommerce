@@ -6,6 +6,8 @@ import application.data.model.Product;
 import application.data.service.page.CategoryServiceImp;
 import application.data.service.page.ProductServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,6 +24,10 @@ public class CollectionsController {
     @GetMapping("/collection")
     public String collection(Model model, @RequestParam(value="pageNumber", required=false)
             Integer pageNumber){
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if(principal instanceof UserDetails){
+            model.addAttribute("username",((UserDetails) principal).getUsername());
+        }
         int pageSize = Constant.DEFAULT_PAGE_SIZE;
 
         if(pageNumber == null) {
@@ -46,6 +52,10 @@ public class CollectionsController {
     }
     @GetMapping("/productbycategory")
     public String showproductbyid(Model model, @RequestParam("categoryId") int categoryId,@RequestParam(value="pageNumber", required=false )Integer pageNumber) {
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if(principal instanceof UserDetails){
+            model.addAttribute("username",((UserDetails) principal).getUsername());
+        }
         List<Product> productList = productServiceImp.listproductBycategory(categoryId);
         int pageSize = Constant.DEFAULT_PAGE_SIZE;
 

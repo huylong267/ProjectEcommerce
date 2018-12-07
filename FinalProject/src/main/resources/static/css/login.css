@@ -341,3 +341,17 @@ ul.social-agileinfo li a i.fa:hover {
 	-webkit-animation: spin 2s linear infinite;
 	animation: spin 2s linear infinite;
 }
+
+.error,.success{
+	color: white;
+	text-align: center;
+}
+
+.alert-username{
+	border-radius: 3px;
+	border: 2px solid white;
+	padding: 5px;
+	display: inline-block;
+	font-size: 17px;
+	margin-bottom: 20px;
+}

@@ -23,7 +23,6 @@ import java.sql.Date;
 import java.util.HashSet;
 
 @Controller
-@SessionAttributes("username")
 public class UserController {
     @Autowired
     private iUserRepository userRepository;
@@ -67,7 +66,6 @@ public class UserController {
         roles.add(roleRepository.findByName("ROLE_ADMIN"));
         roles.add(roleRepository.findByName("ROLE_USER"));
         user.setRoles(roles);
-
         userRepository.save(user);
         return "login";
     }
@@ -85,9 +83,14 @@ public class UserController {
             HashSet<Role> roles = new HashSet<>();
             roles.add(roleRepository.findByName("ROLE_USER"));
             user.setRoles(roles);
-            userServiceImp.register(user);
-             redirect.addFlashAttribute("msg","them thanh comg");
-            return "redirect:/";
+            if( userServiceImp.register(user)){
+                redirect.addFlashAttribute("msg","Thêm mới thành công");
+            }else {
+                redirect.addFlashAttribute("msg","Trùng Username");
+            }
+
+
+            return "redirect:/register";
 
     }
 

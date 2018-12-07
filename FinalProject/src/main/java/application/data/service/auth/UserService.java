@@ -23,5 +23,7 @@ public interface UserService {
 
     ArrayList<UserRole> findUserRole();
 
+    User findByUsername(String username);
+
 
 }

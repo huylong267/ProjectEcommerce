@@ -2,8 +2,9 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 	<div th:replace="common::head"></div>
-	<link rel="stylesheet" href="./static/css/login.css">
+
 </head>
+<link rel="stylesheet" th:href="@{./css/login.css}">
 <body>
 
 <div class="container-fluid">
@@ -43,7 +44,6 @@
 									<input type="checkbox" checked="checked" name="remember"><b style="color: white">   Nhớ mật khẩu</b>
 								</label>
 							</form>
-							<h1 th:text="${session.username}"></h1>
 							<p class="wthree w3l">Hoặc đăng nhập với</p>
 							<ul class="social-agileinfo wthree2">
 								<li>

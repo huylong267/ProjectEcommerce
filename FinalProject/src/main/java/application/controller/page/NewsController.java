@@ -4,6 +4,8 @@ package application.controller.page;
 import application.data.service.page.NewsServiceImp;
 import application.model.NewsVm;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,6 +20,10 @@ public class NewsController {
     private NewsServiceImp newsServiceImp;
     @GetMapping("/detail/news/{id}")
     public String detailNews(@PathVariable("id") int id, Model model) {
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if(principal instanceof UserDetails){
+            model.addAttribute("username",((UserDetails) principal).getUsername());
+        }
         model.addAttribute("news", newsServiceImp.findOneNews(id));
         return "blog_detail";
     }

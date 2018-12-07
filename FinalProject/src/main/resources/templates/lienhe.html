@@ -1,121 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common::head">
 
 </head>
+<link rel="stylesheet" th:href="@{./css/lienhe.css}">
 <body>
 	<div class="container-fluid">
-
-		<div class="header">
-			<div class="top-header">
-				<div class="fone-header"><i class="fa fa-phone-square" aria-hidden="true" style="margin-right:10px;"></i>0969710xxx</div>
-				<div class="icon-header">
-					<div class="vuong">
-						<div class="con"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></div>
-						<div class="con"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></div>
-						<div class="con"><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></div>
-						<div class="con"><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></div>
-						<div class="con"><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></div>
-					</div>
-					<input type="text" id="dau">
-					<i class="fa fa-search" aria-hidden="true"></i>
-				</div>
-			</div>
-			<div class="footer-header">
-				<div class="logo"></div>
-				<div class="menu">
-					<div class="cap1">
-						<ul >
-							<li  style="background:#c52d2f;">
-								<a href="home.html">Trang chủ</a>
-							</li>
-							<li class="drop_menu">
-								<a href="collections.html">Sản Phẩm <i class="fa fa-sort-desc" aria-hidden="true"></i></a>
-								<div class="cap2" >
-									<ul >
-										<li><a href="single.html">Quần áo nam</a></li>
-										<li><a href="#">Quần áo nữ</a></li>
-										<li><a href="#">Đồ trẻ con</a></li>
-										<li><a href="#">Phụ kiện</a></li>
-									</ul>
-								</div>
-							</li>
-							<li>
-								<a href="blog.html">Tin tức</a>
-							</li>
-							<li>
-								<a href="#">Giới thiệu</a>
-							</li>
-							<li>
-								<a href="blog.html">Hệ thống cửa hàng</a>
-							</li>
-							<li class="drop_menu">
-								<a href="contact.html">Tài khoản <i class="fa fa-sort-desc" aria-hidden="true"></i></a>
-								<div class="cap2" >
-									<ul >
-										<li><a href="login.html">Đăng nhập</a></li>
-										<li><a href="dangki.html">Đăng kí</a></li>
-
-									</ul>
-								</div>
-							</li>
-							<li>
-								<a href="#">Giỏ hàng</a>
-							</li>
-
-						</ul>
-
-					</div>
-				</div>
-				<div class="menu2 wow slideInDown" data-wow-duration="1500ms">
-					<div class="cap1-2">
-						<ul >
-							<li  style="background:#c52d2f;">
-								<a href="home.html">Trang chủ</a>
-							</li>
-							<li class="drop_menu">
-								<a href="collections.html">Sản phẩm <strong>></strong></a>
-								<div class="cap2-2" >
-									<ul >
-										<li><a href="single.html">Quần áo nam</a></li>
-										<li><a href="#">Quần áo nữ</a></li>
-										<li><a href="#">Đồ trẻ con</a></li>
-										<li><a href="#">Phụ kiện</a></li>
-									</ul>
-								</div>
-							</li>
-							<li>
-								<a href="blog.html">Tin tức</a>
-							</li>
-							<li>
-								<a href="#">Giới thiệu</a>
-							</li>
-							<li>
-								<a href="#">Hệ thống cửa hàng</a>
-							</li>
-							<li class="drop_menu">
-								<a href="#">Tài khoản <strong>></strong></a>
-								<div class="cap2-2" >
-									<ul >
-										<li><a href="login.html">Đăng nhập</a></li>
-										<li><a href="dangki.html">Đăng kí</a></li>
-									</ul>
-								</div>
-							</li>
-
-							<li>
-								<a href="blog.html">Giỏ hàng</a>
-							</li>
-
-						</ul>
-					</div>
-				</div>
-				<div class="menu-Responsive">
-					<a href="#" class="close">☰</a>
-					<a href="#" class="open">☰</a>
-				</div>
-			</div>
-		</div>
+		<div th:replace="common::header"></div>
 		<div class="main">
 			<div class="header-navigate padding-top-mobile">
 				<div class="container">
@@ -225,10 +116,6 @@
 			</div>
 		</div>
 	</div>
-
-
-
-
-	<script type="text/javascript" src="./JS/jquery.min.js"></script>
+	<script type="text/javascript" src="./js/jquery.min.js"></script>
 </body>
 </html>

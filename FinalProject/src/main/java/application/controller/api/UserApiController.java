@@ -111,5 +111,31 @@ public class UserApiController {
 
         return result;
     }
+    @GetMapping("/update-user/{username}")
+    public BaseApiResult updateUser(@PathVariable String username,@RequestBody UserDataModel userDataModel){
+        DataApiResult result = new DataApiResult();
+        try{
+           User userExist = userServiceImp.findByUsername(username);
+           if(userExist == null ){
+               result.setSuccess(false);
+               result.setMessage("user null");
+           }else {
+               userExist.setAddress(userDataModel.getAddress());
+               userExist.setAvatar(userDataModel.getAvatar());
+               userExist.setDob(userDataModel.getDob());
+               userExist.setEmail(userDataModel.getEmail());
+               userExist.setGender(userDataModel.getGender());
+               userExist.setPassword(userDataModel.getPassword());
+               userServiceImp.register(userExist);
+               result.setData(userDataModel);
+               result.setMessage("update successfull");
+               result.setSuccess(true);
+           }
+        }catch (Exception ex){
+            result.setMessage("catch update user");
+            result.setSuccess(false);
+        }
+        return result;
+    }
 
 }

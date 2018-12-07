@@ -64,7 +64,7 @@ public class  UserServiceImp implements UserService {
     @Override
     @Transactional
     public boolean register(User user) {
-        // Check email exists
+        // Check username exists
         if (userRepository.findByUsername(user.getUsername()) != null) {
             return false;
         }
@@ -84,6 +84,11 @@ public class  UserServiceImp implements UserService {
     @Override
     public ArrayList<UserRole> findUserRole() {
         return iuserroleRepository.findUserRole();
+    }
+
+    @Override
+    public User findByUsername(String username) {
+        return userRepository.findByUsername(username);
     }
 
 

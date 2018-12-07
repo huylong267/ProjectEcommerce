@@ -341,3 +341,8 @@ ul.social-agileinfo li a i.fa:hover {
 	-webkit-animation: spin 2s linear infinite;
 	animation: spin 2s linear infinite;
 }
+
+.error,.success{
+	color: white;
+	text-align: center;
+}

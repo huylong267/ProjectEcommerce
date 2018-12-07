@@ -42,6 +42,10 @@ public class HomeController {
     }
     @GetMapping(path="/list-news")
     public String index(Model model){
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if(principal instanceof UserDetails){
+            model.addAttribute("username",((UserDetails) principal).getUsername());
+        }
         NewsVm newsVm = new NewsVm();
         newsVm.setListNewNews(newsServiceImp.getNewnews());
         newsVm.setListNews(newsServiceImp.findAllNews());
@@ -52,4 +56,12 @@ public class HomeController {
     public String user(){
         return "user";
     }
+
+    @GetMapping(path = "/lienhe")
+    public String gioiThieu (Model model){
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if(principal instanceof UserDetails){
+            model.addAttribute("username",((UserDetails) principal).getUsername());
+        }
+        return "lienhe";    }
 }

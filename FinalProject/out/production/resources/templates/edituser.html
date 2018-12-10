@@ -10,7 +10,7 @@
 	<div class="main baongoai">
 
 		<div class="container">
-			<h1 class="w3ls">Đăng kí</h1>
+			<h1 class="w3ls">Chỉnh sửa</h1>
 			<div class="content-w3ls">
 
 				<div class="row">
@@ -24,10 +24,24 @@
 						<div class="content-agile2">
 
 							<!-- <form action="#" method="post"> -->
-							<form class="login" action="#" th:action="@{/register/save}" th:object="${user}" method="post">
-								<div th:if="${msg}" class="alert-username">
-									<span th:text="${msg}" style="color: white;"></span>
+							<form class="login" th:action="@{/edituserpost}" th:object="${user}" method="post">
+								<div th:if="${msgupdate}" class="alert-username">
+									<span th:text="${msgupdate}" style="color: white;"></span>
 								</div>
+								<div class="img-select-block margin-bottom-15" th:if="${user.getAvatar()}">
+									<label>Ảnh đại diện</label><br/>
+									<img id="preview-user-img" th:src="${user.getAvatar()}"/>
+									<input type='file' id="input-select-img-user"/>
+									<input type='hidden' id ="linkAvatar" th:field="*{avatar}"/>
+								</div>
+                                <div class="img-select-block margin-bottom-15" th:unless="${user.getAvatar()}">
+                                    <label>Ảnh đại diện</label><br/>
+                                    <img id="preview-user-img" th:src="@{/img/default.png}"/>
+                                    <input type='file' id="input-select-img-user"/>
+
+                                </div>
+                                 <input type="hidden"  name="firstname" placeholder="Full Name" title="Please enter your First Name" required="" th:field="*{userId}">
+
 								<div class="form-control2 w3layouts">
 									<!-- <input type="text" id="firstname" name="firstname" placeholder="Full Name" title="Please enter your First Name" required=""> -->
 									<input type="text" id="firstname" placeholder="Nhập họ tên" title="Please enter your First Name" name="name" required class="form-control" th:field="*{name}">
@@ -56,15 +70,8 @@
 									<input type="password" class="lock" placeholder="Nhập lại mật khẩu" id="password2" name="confirm-password" required class="form-control" >
 								</div>
 
-								<input type="submit" class="register" value="Đăng kí">
+								<input type="submit" class="register" value="Lưu thông tin">
 							</form>
-							<p class="wthree w3l">Đăng kí nhanh thông qua</p>
-							<ul class="social-agileinfo wthree2">
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-youtube"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-							</ul>
 						</div>
 					</div>
 				</div>
@@ -108,6 +115,14 @@
         }
     }
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.9.0/sweetalert2.all.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/locale/vi.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+
+<script type="text/javascript" th:src="@{./js/user.js}"></script>
 
 </body>
 </html>

@@ -58,11 +58,11 @@
                     </li>
 
                     <li class="drop_menu" id="drop-menu-logged" sec:authorize="!isAuthenticated()" th:if="${username}">
-                        <a href="contact.html"  sec:authentication="name" th:text="${username}"><i class="fa fa-sort-desc" aria-hidden="true"></i></a>
+                        <a  sec:authentication="name" th:text="${username}"><i class="fa fa-sort-desc" aria-hidden="true"></i></a>
                         <div class="cap2" >
                             <ul >
-                                <li><a>
-                                    <span>Chỉnh sửa</span>
+                                <li><a th:href="@{/edituser}">
+                                    Chỉnh sửa
                                 </a></li>
                                 <li><a th:href="@{/logout}">Đăng xuất</a></li>
                             </ul>

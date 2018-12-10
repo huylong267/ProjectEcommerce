@@ -164,4 +164,22 @@ public class User {
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId=" + userId +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", avatar='" + avatar + '\'' +
+                ", dob=" + dob +
+                ", email='" + email + '\'' +
+                ", address='" + address + '\'' +
+                ", gender=" + gender +
+                ", name='" + name + '\'' +
+                ", createdDate=" + createdDate +
+                ", updateDate=" + updateDate +
+                ", roles=" + roles +
+                '}';
+    }
 }

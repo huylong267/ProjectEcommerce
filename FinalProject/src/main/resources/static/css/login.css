@@ -355,3 +355,19 @@ ul.social-agileinfo li a i.fa:hover {
 	font-size: 17px;
 	margin-bottom: 20px;
 }
+
+.img-select-block {
+	position: relative;
+	margin-left: 40px;
+	color: white;
+}
+
+#input-select-img-user {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	opacity: 0;
+	cursor: pointer;
+}

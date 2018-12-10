@@ -1,56 +1,65 @@
 $(document).ready(function () {
     var dataUser = {};
-    $.get("http://"+window.location.host+"/api/user/"+$(".user-name").text(), function(data, status){
-        if(data.data != null){
-            dataUser.id = data.data.userId;
-            dataUser.createdDate = data.data.createdDate
-            dataUser.avatar = data.data.avatar
-            $('#username').val(data.data.username)
-            $('#fullname').val(data.data.name)
-            $('#address').val(data.data.address)
-            $('#email').val(data.data.email)
-            $('#preview-product-img').attr('src',data.data.avatar)
-            switch (data.data.gender){
-                case "Male":
-                    document.getElementById("male").checked = true;
-                    break;
-                case "Female":
-                    document.getElementById("female").checked = true;
-                    break;
-                case "Other":
-                    document.getElementById("other").checked = true;
-                    break;
-            }
-
-
-        }
-    })
-
     function readURL(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
             reader.onload = function(e) {
-                $('#preview-product-img').attr('src', e.target.result);
+                $('#preview-user-img').attr('src', e.target.result);
             }
+
             reader.readAsDataURL(input.files[0]);
+        }
+        const config = {
+            headers: { 'content-type': 'multipart/form-data' }
         }
     }
 
-    $("#input-select-img-product").change(function() {
+    $("#input-select-img-user").change(function() {
         readURL(this);
         var formData = new FormData();
         NProgress.start();
-        formData.append('file', $("#input-select-img-product")[0].files[0]);
+        formData.append('file', $("#input-select-img-user")[0].files[0]);
         axios.post("/api/upload/upload-image", formData).then(function(res){
             NProgress.done();
             if(res.data.success) {
-                $('#preview-product-img').attr('src', res.data.link);
+                $('#preview-user-img').attr('src', res.data.link);
                 dataUser.imageurl =  res.data.link
+                $('#linkAvatar').val(res.data.link);
+
             }
         }, function(err){
             NProgress.done();
         })
     });
+
+
+    // $.get("http://localhost:1111/api/user/"+$(".user-name").text(), function(data, status){
+    //     if(data.data != null){
+    //         dataUser.id = data.data.userId;
+    //         dataUser.createdDate = data.data.createdDate
+    //         dataUser.avatar = data.data.avatar
+    //         $('#username').val(data.data.username)
+    //         $('#fullname').val(data.data.name)
+    //         $('#address').val(data.data.address)
+    //         $('#email').val(data.data.email)
+    //         $('#preview-product-img').attr('src',data.data.avatar)
+    //         switch (data.data.gender){
+    //             case "Male":
+    //                 document.getElementById("male").checked = true;
+    //                 break;
+    //             case "Female":
+    //                 document.getElementById("female").checked = true;
+    //                 break;
+    //             case "Other":
+    //                 document.getElementById("other").checked = true;
+    //                 break;
+    //         }
+    //
+    //
+    //     }
+    // })
+
+
 
     $(".btn-save-user").on("click", function () {
         if($("#username").val() === "" || $("#fullname").val() === "" || dataUser.imageurl === undefined || $("#address").val() === ""||$("#email").val() === ""
@@ -94,7 +103,7 @@ $(document).ready(function () {
                     'success'
                 ).then(function() {
                     // location.reload();
-                    window.location.replace('http://localhost:8080/logout');
+                    window.location.replace('http://localhost:1111/logout');
                 });
             } else {
                 swal(

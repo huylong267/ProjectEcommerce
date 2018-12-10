@@ -91,6 +91,11 @@ public class  UserServiceImp implements UserService {
         return userRepository.findByUsername(username);
     }
 
+    @Override
+    public User update(User user) {
+        return userRepository.save(user);
+    }
+
 
     public ArrayList<User> getAll(){
         return userRepository.getAll();

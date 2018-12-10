@@ -8,6 +8,7 @@ import application.data.repository.auth.iUserRepository;
 import application.data.service.auth.UserServiceImp;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -19,8 +20,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
-import java.sql.Date;
+import java.util.Date;
 import java.util.HashSet;
+import java.util.Map;
 
 @Controller
 public class UserController {
@@ -84,9 +86,9 @@ public class UserController {
             roles.add(roleRepository.findByName("ROLE_USER"));
             user.setRoles(roles);
             if( userServiceImp.register(user)){
-                redirect.addFlashAttribute("msg","Thêm mới thành công");
+                redirect.addFlashAttribute("msg"," Thêm mới thành công");
             }else {
-                redirect.addFlashAttribute("msg","Trùng Username");
+                redirect.addFlashAttribute("msg"," Thêm mới thất bại trùng username");
             }
 
 
@@ -94,4 +96,41 @@ public class UserController {
 
     }
 
+    @GetMapping(path = "/edituser")
+    public String  editUserGet (Model model){
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if(principal instanceof UserDetails){
+         User user = userServiceImp.findByUsername(((UserDetails) principal).getUsername());
+            model.addAttribute("user",user);
+            model.addAttribute("username",user.getUsername());
+        }
+        return "edituser";
+    }
+
+    @PostMapping(path = "/edituserpost")
+    public String editUserPost(@RequestParam Map<String, Object> params,RedirectAttributes attributes ,Model model){
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if(principal instanceof UserDetails) {
+            User user = (User) userServiceImp.findByUsername(String.valueOf(params.get("username")));
+            if(user != null ){
+                ModelMapper mapper = new ModelMapper();
+                User userUpdated =mapper.map(params,User.class);
+                userUpdated.setAvatar((String) params.get("avatar"));
+                userUpdated.setUser_id(Integer.parseInt((String) params.get("userId")));
+                HashSet<Role> roles = new HashSet<>();
+                roles.add(roleRepository.findByName("ROLE_USER"));
+                userUpdated.setRoles(roles);
+                userUpdated.setPassword(passwordEncoder.encode((CharSequence) params.get("password")));
+                userUpdated.setUpdateDate(new Date());
+                model.addAttribute("username",user.getUsername());
+                userServiceImp.update(userUpdated);
+                attributes.addFlashAttribute("msgupdate","Cập nhật thành công");
+        }
+            else {
+                attributes.addFlashAttribute("msgupdate","Cập nhật thất bại");
+            }
+
+        }
+        return "redirect:/edituser";
+    }
 }

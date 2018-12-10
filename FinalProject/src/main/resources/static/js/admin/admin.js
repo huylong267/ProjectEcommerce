@@ -1,4 +1,4 @@
-$(document).ready(function () {
+    $(document).ready(function () {
     var dataProduct = {};
 
     function readURL(input) {

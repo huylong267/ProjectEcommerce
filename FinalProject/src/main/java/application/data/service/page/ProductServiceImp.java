@@ -50,6 +50,11 @@ public class ProductServiceImp implements iProductService {
         return iProductRepository.listproductBycategory(categoryId);
     }
 
+    @Override
+    public List<Product> listProductHome() {
+        return iProductRepository.listProductHome();
+    }
+
     public PaginableItemList<Product> getListProducts(int pageSize, int pageNumber) {
 
         PaginableItemList<Product> paginableItemList = new PaginableItemList<>();

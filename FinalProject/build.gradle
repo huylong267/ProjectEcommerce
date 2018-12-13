@@ -66,8 +66,8 @@ dependencies {
     compile group: 'org.springframework.social', name: 'spring-social-facebook', version: '2.0.3.RELEASE'
     // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
     compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
-    // https://mvnrepository.com/artifact/org.thymeleaf.extras/thymeleaf-extras-springsecurity4
-    compile group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-springsecurity4', version: '3.0.2.RELEASE'
+// https://mvnrepository.com/artifact/org.thymeleaf.extras/thymeleaf-extras-springsecurity4
+    compile group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-springsecurity4', version: '2.1.2.RELEASE'
     // https://mvnrepository.com/.../io.../springfox-swagger2
     compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.7.0'
     // https://mvnrepository.com/.../io.../springfox-swagger-ui

@@ -1,7 +1,10 @@
 package application.controller.admin;
 
 import application.data.model.Category;
+import application.data.model.Product;
 import application.data.service.page.CategoryServiceImp;
+import application.data.service.page.ProductServiceImp;
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
@@ -17,6 +20,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import javax.validation.Valid;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 
 @Controller
@@ -25,6 +29,8 @@ public class AdminCategoryController {
     @Autowired
     private CategoryServiceImp categoryServiceImp;
 
+    @Autowired
+    private ProductServiceImp  productServiceImp;
 
     @GetMapping("/admin/category")
     public String category(Model model){
@@ -75,6 +81,18 @@ public class AdminCategoryController {
         return "admin/category_form";
     }
 
+    @GetMapping("/admin/category/{id}/delete")
+    public String deleteCate(@PathVariable("id") Integer id , RedirectAttributes redirectAttributes){
 
+        List<Product> products = productServiceImp.listproductBycategory(id);
+        if(products.size() >0 ){
+            redirectAttributes.addFlashAttribute("success","Có sản phẩm thuộc danh mục này");
+        }else {
+            categoryServiceImp.deleteCate(id);
+            redirectAttributes.addFlashAttribute("success","Xóa danh mục sản phẩm thành công");
+        }
+
+        return "redirect:/admin/category/";
+    }
 
 }

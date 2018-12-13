@@ -43,7 +43,7 @@
                         <a th:href="@{/collection}">Sản Phẩm <i class="fa fa-sort-desc" aria-hidden="true"></i></a>
                         <div class="cap2" >
                             <ul th:each="category:${categories}">
-                                <li><a href="" th:text="${category.getName()}"></a></li>
+                                <li><a th:href="@{'/productbycategory?categoryId='+${category.getCategory_id()}}" th:text="${category.getName()}"></a></li>
                             </ul>
                         </div>
                     </li>
@@ -57,9 +57,11 @@
                         <a href="#">Giỏ hàng</a>
                     </li>
 
-                    <li class="drop_menu" id="drop-menu-logged" sec:authorize="!isAuthenticated()" th:if="${username}">
-                        <a href="contact.html"  sec:authentication="name" th:text="${username}"><i class="fa fa-sort-desc" aria-hidden="true"></i></a>
-                        <div class="cap2" >
+                    <li class="drop_menu" id="drop-menu-logged" sec:authorize="isAuthenticated()">
+                        <a th:inline="text">
+                            <span sec:authentication="name"></span>  <i class="fa fa-caret-down"></i>
+                        </a>
+                        <div class="cap2">
                             <ul >
                                 <li><a th:href="@{/edituser}">
                                     Chỉnh sửa
@@ -69,7 +71,7 @@
                         </div>
 
                     </li>
-                    <li class="drop_menu" id="drop-menu-loggin" sec:authorize="!isAuthenticated()" th:unless="${username}">
+                    <li class="drop_menu" id="drop-menu-loggin" sec:authorize="!isAuthenticated()">
                         <a >Tài khoản <i class="fa fa-sort-desc" aria-hidden="true"></i></a>
                         <div class="cap2" >
                             <ul >

@@ -1,6 +1,7 @@
 package application.controller.page;
 
 
+import application.data.service.page.CategoryServiceImp;
 import application.data.service.page.NewsServiceImp;
 import application.model.NewsVm;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,15 +16,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/list-news")
 public class NewsController {
-
+    @Autowired
+    private CategoryServiceImp categoryServiceImp;
     @Autowired
     private NewsServiceImp newsServiceImp;
     @GetMapping("/detail/news/{id}")
     public String detailNews(@PathVariable("id") int id, Model model) {
-        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        if(principal instanceof UserDetails){
-            model.addAttribute("username",((UserDetails) principal).getUsername());
-        }
+        model.addAttribute("categories", categoryServiceImp.findAllCate());
         model.addAttribute("news", newsServiceImp.findOneNews(id));
         return "blog_detail";
     }

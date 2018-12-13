@@ -11,4 +11,7 @@ public interface iProductRepository extends JpaRepository<Product,Integer>{
 
     @Query(value = "select  *from tbl_product where category_id = ? ", nativeQuery = true)
      List<Product> listproductBycategory(int categoryId);
+
+    @Query(value = "select  * from tbl_product p where p.category_id =3 LIMIT 6",nativeQuery = true)
+    List<Product> listProductHome();
 }

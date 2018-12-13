@@ -27,11 +27,11 @@ public class  Product {
     private Date updated_date;
 
     @ManyToOne(optional = true, fetch = FetchType.LAZY)
-    @JoinColumn(name ="category_id" )
+    @JoinColumn(name ="category_id")
     private Category category;
 
     @OneToMany( cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "productdetail_id")
+    @JoinColumn(name = "productdetail_id", nullable = true)
     private Set<ProductDetail> productDetails;
 
     @ManyToMany(mappedBy = "products")

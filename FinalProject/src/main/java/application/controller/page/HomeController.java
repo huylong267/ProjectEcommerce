@@ -9,6 +9,7 @@ import application.data.service.auth.UserServiceImp;
 import application.data.service.page.CategoryServiceImp;
 import application.data.service.page.NewsServiceImp;
 import application.data.service.page.OrderService;
+import application.data.service.page.ProductServiceImp;
 import application.model.NewsVm;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,26 +30,26 @@ import static application.constant.StatusOrderConstant.unpaid;
 @Controller
 @RequestMapping("/")
 public class HomeController {
-
+    @Autowired
+    private CategoryServiceImp categoryServiceImp;
     @Autowired
     private NewsServiceImp newsServiceImp;
+    @Autowired
+    private ProductServiceImp productServiceImp;
+
+
     @GetMapping("/")
     public String home(Model model){
-        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        if(principal instanceof UserDetails){
-            model.addAttribute("username",((UserDetails) principal).getUsername());
-        }
+        model.addAttribute("categories", categoryServiceImp.findAllCate());
+        model.addAttribute("productHome",productServiceImp.listProductHome());
         return "home";
     }
     @GetMapping(path="/list-news")
     public String index(Model model){
-        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        if(principal instanceof UserDetails){
-            model.addAttribute("username",((UserDetails) principal).getUsername());
-        }
         NewsVm newsVm = new NewsVm();
         newsVm.setListNewNews(newsServiceImp.getNewnews());
         newsVm.setListNews(newsServiceImp.findAllNews());
+        model.addAttribute("categories", categoryServiceImp.findAllCate());
         model.addAttribute("list",newsVm);
         return "blog";
     }
@@ -59,9 +60,7 @@ public class HomeController {
 
     @GetMapping(path = "/lienhe")
     public String gioiThieu (Model model){
-        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        if(principal instanceof UserDetails){
-            model.addAttribute("username",((UserDetails) principal).getUsername());
-        }
-        return "lienhe";    }
+            model.addAttribute("categories", categoryServiceImp.findAllCate());
+        return "lienhe";
+    }
 }

@@ -28,18 +28,20 @@
 								<div th:if="${msgupdate}" class="alert-username">
 									<span th:text="${msgupdate}" style="color: white;"></span>
 								</div>
-								<div class="img-select-block margin-bottom-15" th:if="${user.getAvatar()}">
+
+                                <div class="img-select-block margin-bottom-15" th:if="${user.getAvatar()}">
+                                    <label>Ảnh đại diện</label><br/>
+                                    <img id="preview-user-img" th:src="${user.getAvatar()}"/>
+                                    <input type='file' id="input-select-img-user"/>
+									<input type='hidden' id ="linkAvatar" th:field="*{avatar}"/>
+                                </div>
+
+								<div class="img-select-block margin-bottom-15" th:unless="${user.getAvatar()}">
 									<label>Ảnh đại diện</label><br/>
-									<img id="preview-user-img" th:src="${user.getAvatar()}"/>
+									<img id="preview-user-img" th:src="@{/img/default.png}"/>
 									<input type='file' id="input-select-img-user"/>
 									<input type='hidden' id ="linkAvatar" th:field="*{avatar}"/>
 								</div>
-                                <div class="img-select-block margin-bottom-15" th:unless="${user.getAvatar()}">
-                                    <label>Ảnh đại diện</label><br/>
-                                    <img id="preview-user-img" th:src="@{/img/default.png}"/>
-                                    <input type='file' id="input-select-img-user"/>
-
-                                </div>
                                  <input type="hidden"  name="firstname" placeholder="Full Name" title="Please enter your First Name" required="" th:field="*{userId}">
 
 								<div class="form-control2 w3layouts">

@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
@@ -62,7 +63,7 @@ public class ProductApiController {
                 } else {
                     existProduct.setImage(product.getImage());
                     existProduct.setName(product.getName());
-                    existProduct.setUpdated_date(product.getUpdated_date());
+                    existProduct.setUpdated_date(new Date());
                     existProduct.setDesc(product.getDesc());
                     existProduct.setCategory(categoryServiceImp.findOneCate(product.getCategory_id()));
                     productServiceImp.updateproduct(existProduct);

@@ -37,5 +37,6 @@ public class CategoryServiceImp implements iCategoryService {
 
     @Override
     public void deleteCate(int categoryId) {
+        categoryRepository.delete(categoryId);
     }
 }

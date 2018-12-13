@@ -12,4 +12,6 @@ public interface iProductService {
     void deleteProduct(int id);
     List<Product> findbyName(String name);
     List<Product> listproductBycategory(int categoryId);
+    List<Product> listProductHome();
+
 }

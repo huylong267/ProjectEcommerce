@@ -6,6 +6,7 @@ import application.data.model.User;
 import application.data.repository.auth.iRoleRepository;
 import application.data.repository.auth.iUserRepository;
 import application.data.service.auth.UserServiceImp;
+import application.data.service.page.CategoryServiceImp;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -34,7 +35,8 @@ public class UserController {
     private PasswordEncoder passwordEncoder;
     @Autowired
     private UserServiceImp userServiceImp;
-
+    @Autowired
+    private CategoryServiceImp categoryServiceImp;
     @GetMapping("admin/customer")
     public String customers() {
         return"admin/customer_list";
@@ -47,6 +49,7 @@ public class UserController {
 
     @GetMapping("/register")
     public String register(Model model){
+         model.addAttribute("categories", categoryServiceImp.findAllCate());
             model.addAttribute("user",new User());
         return "register";
     }
@@ -98,6 +101,7 @@ public class UserController {
 
     @GetMapping(path = "/edituser")
     public String  editUserGet (Model model){
+        model.addAttribute("categories", categoryServiceImp.findAllCate());
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         if(principal instanceof UserDetails){
          User user = userServiceImp.findByUsername(((UserDetails) principal).getUsername());
@@ -109,6 +113,7 @@ public class UserController {
 
     @PostMapping(path = "/edituserpost")
     public String editUserPost(@RequestParam Map<String, Object> params,RedirectAttributes attributes ,Model model){
+
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         if(principal instanceof UserDetails) {
             User user = (User) userServiceImp.findByUsername(String.valueOf(params.get("username")));

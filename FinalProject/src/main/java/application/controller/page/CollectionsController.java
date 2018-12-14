@@ -52,27 +52,24 @@ public class CollectionsController {
     }
     @GetMapping("/productbycategory")
     public String showproductbyid(Model model, @RequestParam("categoryId") int categoryId,@RequestParam(value="pageNumber", required=false )Integer pageNumber) {
-        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        if(principal instanceof UserDetails){
-            model.addAttribute("username",((UserDetails) principal).getUsername());
-        }
-        List<Product> productList = productServiceImp.listproductBycategory(categoryId);
+       // List<Product> productList = productServiceImp.listproductBycategory(categoryId);
         int pageSize = Constant.DEFAULT_PAGE_SIZE;
 
         if(pageNumber == null) {
             pageNumber = 1;
         }
         PaginableItemList<Product> paginableItemList = productServiceImp.
-                getListProducts(Constant.DEFAULT_PAGE_SIZE,
-                        pageNumber - 1);
+                getListProductPaging(Constant.DEFAULT_PAGE_SIZE,
+                        pageNumber - 1,categoryId);
         int totalPages = 0;
         if(paginableItemList.getTotalProducts() % pageSize == 0) {
             totalPages = (int)(paginableItemList.getTotalProducts() / pageSize);
         } else {
             totalPages = (int)(paginableItemList.getTotalProducts() / pageSize) + 1;
         }
+        System.out.println("TOTAL----------"+totalPages);
         List<Product> listProducts = paginableItemList.getListData();
-        model.addAttribute("products", productList);
+        model.addAttribute("products", listProducts);
         model.addAttribute("totalPages",totalPages);
         model.addAttribute("pageNumber",pageNumber);
         model.addAttribute("categories", categoryServiceImp.findAllCate());

@@ -40,8 +40,11 @@ public class HomeController {
 
     @GetMapping("/")
     public String home(Model model){
-        model.addAttribute("categories", categoryServiceImp.findAllCate());
-        model.addAttribute("productHome",productServiceImp.listProductHome());
+        List<Category> categorryList = categoryServiceImp.findAllCate();
+        model.addAttribute("categories", categorryList);
+        model.addAttribute("productShirtHome",productServiceImp.listProductHome(3));
+        model.addAttribute("producttrousersHome",productServiceImp.listProductHome(15));
+        model.addAttribute("productOtherHome",productServiceImp.listProductHome(9));
         return "home";
     }
     @GetMapping(path="/list-news")

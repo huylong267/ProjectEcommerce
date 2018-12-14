@@ -2,6 +2,7 @@ package application.data.service.page;
 
 import application.data.model.Product;
 
+import java.awt.print.Pageable;
 import java.util.List;
 
 public interface iProductService {
@@ -12,6 +13,6 @@ public interface iProductService {
     void deleteProduct(int id);
     List<Product> findbyName(String name);
     List<Product> listproductBycategory(int categoryId);
-    List<Product> listProductHome();
+    List<Product> listProductHome(int categoryId);
 
 }

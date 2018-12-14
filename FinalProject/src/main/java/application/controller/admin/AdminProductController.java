@@ -44,27 +44,27 @@ public class AdminProductController {
         model.addAttribute("product",productServiceImp.findOneProduct(id));
         return "admin/product_form";
     }
-//
-//    String[] image ={
-//            "/link/1544691764-img1.jpg","/link/1544691809-img4.jpg","/link/1544691831-img5.jpg","/link/1544691894-img6.jpg" ,
-//            "/link/1544691932-img9.jpg","/link/1544691952-img10.jpg"
-//    };
-//    @GetMapping("/admin/product/fakeproduct")
-//    public String fakeProduct(){
-//        for(int i =0 ;i<=5;i++){
-//            Product product = new Product();
-//            product.setProduct_id(i+1);
-//            product.setPrice(1000000);
-//            product.setCreated_date(new Date());
-//            product.setName("Áo nam "+ i);
-//            product.setDesc("Chi tiết áo nam "+i);
-//            product.setCategory(categoryServiceImp.findOneCate(3));
-//            for (int j=i; j < image.length;j++){
-//                product.setImage(image[i]);
-//            }
-//            productServiceImp.addNewProduct(product);
-//
-//        }
-//        return "admin/product_list";
-//    }
+
+    String[] image ={
+            "/link/1544762404-anh5.jpg","/link/1544762433-anh7.jpg","/link/1544762469-megamenu_1_image_1.jpg","/link/1544762502-anh8.jpg" ,
+            "/link/1544762520-anh12.jpg","/link/1544762534-anh11.jpg","/link/1544762547-anh3.jpg"
+    };
+    @GetMapping("/admin/product/fakeproduct")
+    public String fakeProduct(){
+        for(int i =0 ;i<=5;i++){
+            Product product = new Product();
+            product.setProduct_id(i+1);
+            product.setPrice(1000000);
+            product.setCreated_date(new Date());
+            product.setName("Phụ kiện nam "+ i);
+            product.setDesc("Chi tiết Phụ kiện nam "+i);
+            product.setCategory(categoryServiceImp.findOneCate(9));
+            for (int j=i; j < image.length;j++){
+                product.setImage(image[i]);
+            }
+            productServiceImp.addNewProduct(product);
+
+        }
+        return "admin/product_list";
+    }
 }

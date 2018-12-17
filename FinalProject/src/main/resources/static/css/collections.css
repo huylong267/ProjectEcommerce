@@ -471,3 +471,11 @@ span.amout span {
     color: red;
 }
 
+.new-look a {
+    text-decoration: none;
+    color: black;
+}
+
+#product-content-redirect:hover{
+    cursor: pointer;
+}

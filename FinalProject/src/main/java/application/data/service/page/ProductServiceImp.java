@@ -79,5 +79,13 @@ public class ProductServiceImp implements iProductService {
         paginableItemList.setListData(pages.getContent());
         return paginableItemList;
     }
-
+    public PaginableItemList<Product> getListProductPricePaging (int pageSize,int pageNumber, int priceMin,int priceMax){
+        PaginableItemList<Product> paginableItemList = new PaginableItemList<>();
+        paginableItemList.setPageSize(pageSize);
+        paginableItemList.setPageNumber(pageNumber);
+        Page<Product> pages = iProductRepository.listProductPricePaging(priceMax,priceMin,new PageRequest(pageNumber,pageSize));
+        paginableItemList.setTotalProducts(pages.getTotalElements());
+        paginableItemList.setListData(pages.getContent());
+        return paginableItemList;
+    }
 }

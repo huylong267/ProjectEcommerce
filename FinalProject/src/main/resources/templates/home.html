@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 	<div th:replace="common::head"></div>
-	<link rel="stylesheet" th:href="@{./css/home.css}">
+
 </head>
 <body>
 <div class="container-fluid">
@@ -69,12 +69,12 @@
 
 									<div class="product-img">
 
-										<img th:src="${p.getImage()}" alt="">
+										<a th:href="@{'productdetail/'+${p.getProduct_id()}}"><img th:src="${p.getImage()}" alt=""></a>
 									</div>
 
 								</div>
 								<h3 class="product-title">
-									<a href="" th:text="${p.getName()}"></a>
+									<a th:href="@{'productdetail/'+${p.getProduct_id()}}" th:text="${p.getName()}"></a>
 								</h3>
 								<div class="product-price">
 										<span class="amout">
@@ -138,12 +138,12 @@
 
 									<div class="product-img">
 
-										<img th:src="${p1.getImage()}" alt="">
+										<a th:href="@{'productdetail/'+${p1.getProduct_id()}}"><img th:src="${p1.getImage()}" alt=""></a>
 									</div>
 
 								</div>
 								<h3 class="product-title">
-									<a href="" th:text="${p1.getName()}"></a>
+									<a th:href="@{'productdetail/'+${p1.getProduct_id()}}" th:text="${p1.getName()}"></a>
 								</h3>
 								<div class="product-price">
 										<span class="amout">
@@ -218,12 +218,12 @@
 
 									<div class="product-img">
 
-										<img th:src="${p.getImage()}" alt="">
+										<a th:href="@{'productdetail/'+${p.getProduct_id()}}"><img th:src="${p.getImage()}" alt=""></a>
 									</div>
 
 								</div>
 								<h3 class="product-title">
-									<a href="" th:text="${p.getName()}"></a>
+									<a th:href="@{'productdetail/'+${p.getProduct_id()}}" th:text="${p.getName()}"></a>
 								</h3>
 								<div class="product-price">
 										<span class="amout">

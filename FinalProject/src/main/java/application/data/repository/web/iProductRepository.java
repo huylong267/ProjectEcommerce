@@ -23,6 +23,6 @@ public interface iProductRepository extends JpaRepository<Product,Integer>{
     @Query(value = "select * from tbl_product p where p.category_id= :category_id  ORDER BY ?#{#pageable}" ,nativeQuery = true)
     Page<Product> listProductPaging( @Param("category_id") Integer category_id, Pageable  pageable);
 
-
-
+    @Query(value = "select * from tbl_product p where p.price<= :priceMax AND  p.price >= :priceMin ORDER BY ?#{#pageable}" ,nativeQuery = true)
+    Page<Product> listProductPricePaging(@Param("priceMax")Integer priceMax,@Param("priceMin") Integer priceMin, Pageable pageable);
 }

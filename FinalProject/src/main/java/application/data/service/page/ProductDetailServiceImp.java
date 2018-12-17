@@ -50,5 +50,7 @@ public class ProductDetailServiceImp implements iProductDetailService {
     public ProductDetail getByDetail(int productId, int sizeId, int colorId) {
         return iProductDetailRepository.getByDetail(productId,sizeId,colorId);
     }
+
+
 }
 

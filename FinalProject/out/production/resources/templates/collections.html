@@ -61,7 +61,7 @@
 												<ul class="filter-link clearfix" th:each="category:${categories}">
 													<li>
 														<label>
-															<a th:href="@{'productbycategory?categoryId='+${category.getCategory_id()}}">
+															<a th:href="@{'/productbycategory?categoryId='+${category.getCategory_id()}}">
 																<span th:text="${category.getName()}"></span>
 															</a>
 														</label>
@@ -73,27 +73,27 @@
 												<ul class="filter-price clearfix">
 													<li>
 														<label data-filter="new-look" class="new-look">
-															<span>Nhỏ hơn 500,000₫</span>
+															<a th:href="@{'/productbyprice?priceMin=0&priceMax=500000'}"><span>Nhỏ hơn 500,000₫</span></a>
 														</label>
 													</li>
 													<li>
 														<label data-filter="new-look" class="new-look">
-															<span>Từ 500,000₫ - 2,000,000₫</span>
+															<a th:href="@{'/productbyprice?priceMin=500000&priceMax=1000000'}"><span>Từ 500,000₫ - 1,000,000₫</span></a>
 														</label>
 													</li>
 													<li>
 														<label data-filter="new-look" class="new-look">
-															<span>Từ 2,000,000₫ - 5,000,000₫</span>
+															<a th:href="@{'/productbyprice?priceMin=1000000&priceMax=1500000'}"><span>Từ 1,000,000₫ - 1,500,000₫</span></a>
 														</label>
 													</li>
 													<li>
 														<label data-filter="new-look" class="new-look">
-															<span>Từ 5,000,000₫ - 10,000,000₫</span>
+															<a th:href="@{'/productbyprice?priceMin=1500000&priceMax=2000000'}"><span>Từ 1,500,000₫ - 2,000,000</span></a>
 														</label>
 													</li>
 													<li>
 														<label data-filter="new-look" class="new-look">
-															<span>Lớn hơn 10,000,000₫</span>
+															<a th:href="@{'/productbyprice?priceMin=2000000&priceMax=10000000'}"><span>Lớn hơn 2,000,000</span></a>
 														</label>
 													</li>
 												</ul>
@@ -106,24 +106,26 @@
 												<div class="row">
 													<h4 th:if="${#lists.isEmpty(products)}">Chưa có sản phẩm nào</h4>
 													<div th:unless="${#lists.isEmpty(products)}" data-wow-delay="0.2s" class="product col-lg-3 col-md-6 col-sm-6 col-xs-6 wow fadeIn" th:each="product:${products}">
-														<div  class="product-content" >
-															<div  class="product-over-tool">
-																<a href=""><i class="fa fa-cart-arrow-down"></i></a>
 
-																<a href=""><i class="fa fa-exchange"></i></a>
+															<div  class="product-content" id="product-content-redirect" th:attr="data-productid=${product.getProduct_id()}">
+																<div  class="product-over-tool">
+																	<a href=""><i class="fa fa-cart-arrow-down"></i></a>
 
-																<a href=""><i class="fa fa-heart"></i></a>
-															</div>
-															<div  class="product-over-tool-gio-hang">
-																<a href="">Giỏ Hàng</a>
-															</div>
-															<div class="product-img">
-																<img th:src="${product.getImage()}" alt="">
+																	<a href=""><i class="fa fa-exchange"></i></a>
+
+																	<a href=""><i class="fa fa-heart"></i></a>
+																</div>
+																<div  class="product-over-tool-gio-hang">
+																	<a href="">Giỏ Hàng</a>
+																</div>
+																<div class="product-img">
+																	<img th:src="${product.getImage()}" alt="">
+																</div>
+
 															</div>
 
-														</div>
 														<h3 class="product-title">
-															<a href=""><span th:text="${product.getName()}"></span></a>
+															<a th:href="@{'productdetail/'+${product.getProduct_id()}}"><span th:text="${product.getName()}"></span></a>
 														</h3>
 														<div class="product-price">
 															<span class="amout">
@@ -159,5 +161,13 @@
 	</div>
 	<div th:replace="common::footer"></div>
 	<script type="text/javascript" src="./js/jquery.min.js"></script>
+
+	<script>
+		$("#product-content-redirect").click(function () {
+		    var productId= $(this).data("productid");
+            window.location.replace("/productdetail/"+productId);
+
+        })
+	</script>
 </body>
 </html>

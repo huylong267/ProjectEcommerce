@@ -4053,3 +4053,16 @@
 2018-Dec-14 17:19:03 PM [restartedMain] DEBUG application.Application - Start main ---------------- 
 2018-Dec-14 17:24:10 PM [main] DEBUG application.Application - Start main ---------------- 
 2018-Dec-14 17:24:10 PM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Dec-17 08:55:50 AM [main] DEBUG application.Application - Start main ---------------- 
+2018-Dec-17 08:55:51 AM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Dec-17 09:31:49 AM [main] DEBUG application.Application - Start main ---------------- 
+2018-Dec-17 09:31:49 AM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Dec-17 10:05:03 AM [main] DEBUG application.Application - Start main ---------------- 
+2018-Dec-17 10:05:03 AM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Dec-17 10:17:06 AM [main] DEBUG application.Application - Start main ---------------- 
+2018-Dec-17 10:17:07 AM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Dec-17 10:20:06 AM [main] DEBUG application.Application - Start main ---------------- 
+2018-Dec-17 10:20:06 AM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Dec-17 11:09:33 AM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Dec-17 11:12:08 AM [main] DEBUG application.Application - Start main ---------------- 
+2018-Dec-17 11:12:08 AM [restartedMain] DEBUG application.Application - Start main ---------------- 

@@ -81,8 +81,7 @@
                                                 <div data-value="Đỏ" class="n-sd swatch-element color do ">
                                                     <input class="variant-0 input-product" id="swatch-0-do" type="radio"
                                                            name="option1" value="Đỏ" checked="">
-                                                    <label class="do has-thumb sd" for="swatch-0-do"
-                                                           style="background: url(https://product.hstatic.net/1000194808/product/upload_56ae0fb90f204dd0803bcb7629ff023f_compact.jpg) top left no-repeat ">
+                                                    <label class="do has-thumb sd" for="swatch-0-do" tabindex="1">
                                                         <span>Đỏ</span>
                                                     </label>
 
@@ -90,9 +89,8 @@
 
                                                 <div data-value="Xanh" class="n-sd swatch-element color xanh ">
                                                     <input class="variant-0 input-product" id="swatch-0-xanh" type="radio"
-                                                           name="option1" value="Xanh">
-                                                    <label class="xanh has-thumb" for="swatch-0-xanh"
-                                                           style="background: url(https://product.hstatic.net/1000194808/product/upload_48f20e93003e4aa78d1e353ccbc06a81_compact.jpg) top left no-repeat ">
+                                                           name="option1" value="Xanh" >
+                                                    <label class="xanh has-thumb" for="swatch-0-xanh" tabindex="2">
                                                         <span>Xanh</span>
                                                     </label>
 
@@ -100,11 +98,9 @@
 
                                                 <div data-value="Trắng" class="n-sd swatch-element color trang ">
                                                     <input class="variant-0 input-product" id="swatch-0-trang" type="radio"
-                                                           name="option1" value="Trắng">
+                                                           name="option1" value="Trắng" >
 
-
-                                                    <label class="trang has-thumb" for="swatch-0-trang"
-                                                           style="background: url(https://product.hstatic.net/1000194808/product/1_89872_compact.jpg) top left no-repeat ">
+                                                    <label class="trang has-thumb" for="swatch-0-trang" tabindex="3">
                                                         <span>Trắng</span>
                                                     </label>
 
@@ -112,9 +108,8 @@
 
                                                 <div data-value="Xám" class="n-sd swatch-element color xam ">
                                                     <input class="variant-0 input-product" id="swatch-0-xam" type="radio"
-                                                           name="option1" value="Xám">
-                                                    <label class="xam has-thumb" for="swatch-0-xam"
-                                                           style="background: url(https://product.hstatic.net/1000194808/product/upload_6c256a6d9c414a5e996d8ed5fc40f72d_compact.jpg) top left no-repeat ">
+                                                           name="option1" value="Xám" >
+                                                    <label class="xam has-thumb" for="swatch-0-xam" tabindex="4">
                                                         <span>Xám</span>
 
                                                     </label>
@@ -183,36 +178,10 @@
                                 </div>
 
                                 <div class="grid mg-left-5">
-
-                                    <div class=".grid__item col-md-4 pd-left5">
-                                        <div class="product-quantity clearfix">
-                                            <div class="qty-addcart clearfix">
-                                                <span>Số lượng </span>
-
-
-                                                <div class="js-qty">
-                                                    <button type="button"
-                                                            class="js-qty__adjust js-qty__adjust--minus icon-fallback-text"
-                                                            data-id="" data-qty="0">
-                                                        <span class="icon glyphicon-minus" aria-hidden="true"></span>
-                                                        <span class="fallback-text" aria-hidden="true">−</span>
-                                                        <span class="visually-hidden">Giảm số lượng sản phẩm đi 1</span>
-                                                    </button>
-                                                    <input type="number" class="js-qty__num" value="1" min="1" data-id=""
-                                                           aria-label="quantity" pattern="[0-9]*" name="quantity"
-                                                           id="Quantity">
-                                                    <button type="button"
-                                                            class="js-qty__adjust js-qty__adjust--plus icon-fallback-text"
-                                                            data-id="" data-qty="11">
-                                                        <span class="icon glyphicon-plus" aria-hidden="true"></span>
-                                                        <span class="fallback-text" aria-hidden="true">+</span>
-                                                        <span class="visually-hidden">Tăng số lượng sản phẩm lên 1</span>
-                                                    </button>
-                                                </div>
-
-
-                                            </div>
-                                        </div>
+                                    <div class="qty mt-5">
+                                        <span class="minus bg-dark">-</span>
+                                        <input type="number" class="count" name="qty" value="1">
+                                        <span class="plus bg-dark">+</span>
                                     </div>
                                     <div class=".grid__item col-md-4 pd-left5">
                                         <div class="product-actions clearfix">
@@ -489,6 +458,16 @@
             paginationSpeed: 1000,
             navigationText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>']
         });
+        $('.count').prop('disabled', true);
+        $(document).on('click','.plus',function(){
+            $('.count').val(parseInt($('.count').val()) + 1 );
+        });
+        $(document).on('click','.minus',function(){
+            $('.count').val(parseInt($('.count').val()) - 1 );
+            if ($('.count').val() == 0) {
+                $('.count').val(1);
+            }
+        });
     });
 </script>
 <script>
@@ -499,7 +478,6 @@
     });
 
 </script>
-
 
 </body>
 </html>

@@ -4066,3 +4066,9 @@
 2018-Dec-17 11:09:33 AM [restartedMain] DEBUG application.Application - Start main ---------------- 
 2018-Dec-17 11:12:08 AM [main] DEBUG application.Application - Start main ---------------- 
 2018-Dec-17 11:12:08 AM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Dec-18 14:35:45 PM [main] DEBUG application.Application - Start main ---------------- 
+2018-Dec-18 14:35:46 PM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Dec-18 15:17:38 PM [main] DEBUG application.Application - Start main ---------------- 
+2018-Dec-18 15:17:38 PM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Dec-18 16:53:24 PM [main] DEBUG application.Application - Start main ---------------- 
+2018-Dec-18 16:53:24 PM [restartedMain] DEBUG application.Application - Start main ---------------- 

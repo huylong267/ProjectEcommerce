@@ -57,7 +57,8 @@
                             </div>
 
                             <div class="pro-price clearfix">
-                                GIÁ : <span class="current-price ProductPrice" th:text="${product.getPrice()}"></span><span>VND</span>
+                                GIÁ : <span class="current-price ProductPrice"
+                                            th:text="${product.getPrice()}"></span><span>VND</span>
 
                                 <!--<span class="original-price ComparePrice"><s>420,000₫</s></span>-->
                                 <!--<div class="sale-percentage"><span class="PriceSaving">(Bạn đã tiết kiệm được 40,000₫)</span>-->
@@ -71,133 +72,72 @@
                             <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm"
                                   class="form-vertical">
                                 <div class="product-variants-wrapper">
-
-                                    <div id="product-select-watch" class="select-swatch">
-                                        <div id="variant-swatch-0" class="swatch swatch-product-single clearfix"
-                                             data-option="option1" data-option-index="0">
-                                            <div class="header1">Màu sắc</div>
-                                            <div class="select-swap">
-
-                                                <div data-value="Đỏ" class="n-sd swatch-element color do ">
-                                                    <input class="variant-0 input-product" id="swatch-0-do" type="radio"
-                                                           name="option1" value="Đỏ" checked="">
-                                                    <label class="do has-thumb sd" for="swatch-0-do" tabindex="1">
-                                                        <span>Đỏ</span>
-                                                    </label>
-
-                                                </div>
-
-                                                <div data-value="Xanh" class="n-sd swatch-element color xanh ">
-                                                    <input class="variant-0 input-product" id="swatch-0-xanh" type="radio"
-                                                           name="option1" value="Xanh" >
-                                                    <label class="xanh has-thumb" for="swatch-0-xanh" tabindex="2">
-                                                        <span>Xanh</span>
-                                                    </label>
-
-                                                </div>
-
-                                                <div data-value="Trắng" class="n-sd swatch-element color trang ">
-                                                    <input class="variant-0 input-product" id="swatch-0-trang" type="radio"
-                                                           name="option1" value="Trắng" >
-
-                                                    <label class="trang has-thumb" for="swatch-0-trang" tabindex="3">
-                                                        <span>Trắng</span>
-                                                    </label>
-
-                                                </div>
-
-                                                <div data-value="Xám" class="n-sd swatch-element color xam ">
-                                                    <input class="variant-0 input-product" id="swatch-0-xam" type="radio"
-                                                           name="option1" value="Xám" >
-                                                    <label class="xam has-thumb" for="swatch-0-xam" tabindex="4">
-                                                        <span>Xám</span>
-
-                                                    </label>
-
-                                                </div>
-
+                                    <div class="color-choose">
+                                        <div class="color-choose-title">Màu sắc</div>
+                                        <div class="div-input-choose-color"th:each="p:${productDetail}">
+                                            <div class="radio-color">
+                                                <label for="input-choose-color-blue" th:text="${p.getColor().getName()}"></label><input type="radio"
+                                                                                                        name="optradio"
+                                                                                                        id="input-choose-color-blue" th:value="${p.getColor().getColor_id()}">
                                             </div>
-                                        </div>
-
-                                        <div id="variant-swatch-1" class="swatch swatch-product-single clearfix"
-                                             data-option="option2" data-option-index="1">
-                                            <div class="header1">Kích thước</div>
-                                            <div class="select-swap">
-
-                                                <div data-value="M" class="n-sd swatch-element m">
-                                                    <input class="variant-1 input-product" id="swatch-1-m" type="radio"
-                                                           name="option2" value="M" checked="">
-                                                    <label for="swatch-1-m" class="sd">
-                                                        M
-                                                    </label>
-
-                                                </div>
-
-                                                <div data-value="L" class="n-sd swatch-element l">
-                                                    <input class="variant-1 input-product" id="swatch-1-l" type="radio"
-                                                           name="option2" value="L">
-                                                    <label for="swatch-1-l">
-                                                        L
-                                                    </label>
-
-                                                </div>
-
-                                                <div data-value="XL" class="n-sd swatch-element xl soldout">
-                                                    <input class="variant-1 input-product" id="swatch-1-xl" type="radio"
-                                                           name="option2" value="XL" disabled="disabled">
-                                                    <label for="swatch-1-xl">
-                                                        XL
-                                                    </label>
-
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="product-size-hotline">
-                                        <div class="product-hotline">
-                                            <svg class="svg-inline--fa fa-phone fa-w-16" aria-hidden="true" data-prefix="fa"
-                                                 data-icon="phone" role="img" xmlns="http://www.w3.org/2000/svg"
-                                                 viewBox="0 0 512 512" data-fa-i2svg="">
-                                                <path fill="currentColor"
-                                                      d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"></path>
-                                            </svg><!-- <i class="fa fa-phone" aria-hidden="true"></i> --> Hotline hỗ trợ
-                                            24/7:
-                                            <a href="tel:(+84)934323882">(+84)934323882</a>
-                                        </div>
-                                        <span>|</span>
-                                        <div class="social-network-actions text-left">
-                                            <div class="fb-send"
-                                                 data-href="https://suplo-lady-fashion.myharavan.com/products/quan-jeans-cao-cap-1"></div>
-                                            <div class="fb-like"
-                                                 data-href="https://suplo-lady-fashion.myharavan.com/products/quan-jeans-cao-cap-1"
-                                                 data-layout="button_count" data-action="like" data-size="small"
-                                                 data-show-faces="true" data-share="true"></div>
+                                            <!--<div class="radio-color">-->
+                                                <!--<label for="input-choose-color-red">Đỏ</label><input type="radio"-->
+                                                                                                     <!--name="optradio"-->
+                                                                                                     <!--id="input-choose-color-red">-->
+                                            <!--</div>-->
+                                            <!--<div class="radio-color">-->
+                                                <!--<label for="input-choose-color-white">Trắng</label><input type="radio"-->
+                                                                                                          <!--name="optradio"-->
+                                                                                                          <!--id="input-choose-color-white">-->
+                                            <!--</div>-->
                                         </div>
                                     </div>
                                 </div>
-
+                                <div class="product-variants-wrapper">
+                                    <div class="color-choose">
+                                        <div class="color-choose-title">Kích thước</div>
+                                        <div class="div-input-choose-color">
+                                            <div class="radio-color" th:each="p:${productDetail}">
+                                                <label for="input-choose-size-M" th:text="${p.getSize().getName()}"></label><input type="radio"
+                                                                                                        name="sizeradio"
+                                                                                                        id="input-choose-size-M" th:value="${p.getSize().getSize_id()}">
+                                            </div>
+                                            <!--<div class="radio-color">-->
+                                                <!--<label for="input-choose-size-L">L</label><input type="radio"-->
+                                                                                                     <!--name="sizeradio"-->
+                                                                                                     <!--id="input-choose-size-L">-->
+                                            <!--</div>-->
+                                            <!--<div class="radio-color">-->
+                                                <!--<label for="input-choose-size-XL">XL</label><input type="radio"-->
+                                                                                                          <!--name="sizeradio"-->
+                                                                                                          <!--id="input-choose-size-XL">-->
+                                            <!--</div>-->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-variants-wrapper">
                                 <div class="grid mg-left-5">
                                     <div class="qty mt-5">
                                         <span class="minus bg-dark">-</span>
                                         <input type="number" class="count" name="qty" value="1">
                                         <span class="plus bg-dark">+</span>
                                     </div>
-                                    <div class=".grid__item col-md-4 pd-left5">
-                                        <div class="product-actions clearfix">
-                                            <button type="submit" name="add" id="AddToCart" class="btnAddToCart">Thêm vào
-                                                giỏ
-                                                hàng
-                                            </button>
-                                        </div>
+                                </div>
+                                </div>
+                                <div class=".grid__item  pd-left5">
+                                    <div class="product-actions">
+                                        <button type="submit" name="add" id="AddToCart" class="btnAddToCart">Thêm
+                                            vào
+                                            giỏ
+                                            hàng
+                                        </button>
                                     </div>
-                                    <div class=".grid__item col-md-4 pd-left5">
-                                        <div class="product-actions clearfix">
-                                            <button type="button" name="buy" id="buy-now" class="btnBuyNow">Mua ngay
-                                            </button>
-                                        </div>
+                                </div>
+                                <div class=".grid__item  pd-left5">
+                                    <div class="product-actions clearfix">
+                                        <button type="button" name="buy" id="buy-now" class="btnBuyNow">Mua ngay
+                                        </button>
                                     </div>
-
                                 </div>
                             </form>
                         </div>
@@ -459,11 +399,11 @@
             navigationText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>']
         });
         $('.count').prop('disabled', true);
-        $(document).on('click','.plus',function(){
-            $('.count').val(parseInt($('.count').val()) + 1 );
+        $(document).on('click', '.plus', function () {
+            $('.count').val(parseInt($('.count').val()) + 1);
         });
-        $(document).on('click','.minus',function(){
-            $('.count').val(parseInt($('.count').val()) - 1 );
+        $(document).on('click', '.minus', function () {
+            $('.count').val(parseInt($('.count').val()) - 1);
             if ($('.count').val() == 0) {
                 $('.count').val(1);
             }

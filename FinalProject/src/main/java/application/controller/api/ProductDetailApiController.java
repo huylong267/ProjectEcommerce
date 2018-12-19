@@ -137,5 +137,21 @@ public class    ProductDetailApiController {
         }
         return result;
     }
+
+    @GetMapping("findproductDetailbyColor/{productId}")
+    public BaseApiResult findproductDetailbyColor (@PathVariable int productId,@RequestParam("optradio")int optradio){
+        DataApiResult result = new DataApiResult();
+        try {
+            ProductDetail productDetail = productDetailServiceImp.findproductDetailbyColor(optradio,productId);
+            result.setData(productDetail);
+            result.setSuccess(true);
+            result.setMessage("SUCCESSFULLY");
+        }catch (Exception e){
+            result.setSuccess(false);
+            result.setMessage("FAIL");
+        }
+        return result;
+    }
+
 }
 

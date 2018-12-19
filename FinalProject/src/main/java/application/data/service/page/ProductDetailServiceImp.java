@@ -51,6 +51,11 @@ public class ProductDetailServiceImp implements iProductDetailService {
         return iProductDetailRepository.getByDetail(productId,sizeId,colorId);
     }
 
+    @Override
+    public ProductDetail findproductDetailbyColor(int colorId, int productId) {
+        return iProductDetailRepository.getImagebyColor(colorId,productId);
+    }
+
 
 }
 

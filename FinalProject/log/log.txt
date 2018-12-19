@@ -4072,3 +4072,12 @@
 2018-Dec-18 15:17:38 PM [restartedMain] DEBUG application.Application - Start main ---------------- 
 2018-Dec-18 16:53:24 PM [main] DEBUG application.Application - Start main ---------------- 
 2018-Dec-18 16:53:24 PM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Dec-19 09:12:00 AM [main] DEBUG application.Application - Start main ---------------- 
+2018-Dec-19 09:12:01 AM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Dec-19 15:28:55 PM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Dec-19 15:31:12 PM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Dec-19 16:17:30 PM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Dec-19 16:32:33 PM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Dec-19 16:32:36 PM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2018-Dec-19 16:34:57 PM [main] DEBUG application.Application - Start main ---------------- 
+2018-Dec-19 16:34:57 PM [restartedMain] DEBUG application.Application - Start main ---------------- 

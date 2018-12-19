@@ -12,5 +12,5 @@ public interface iProductDetailService {
     void updateDetail(ProductDetail productDetail);
     void delete(int id);
     ProductDetail getByDetail(int productId, int sizeId, int colorId);
-
+    ProductDetail findproductDetailbyColor(int colorId, int productId);
 }

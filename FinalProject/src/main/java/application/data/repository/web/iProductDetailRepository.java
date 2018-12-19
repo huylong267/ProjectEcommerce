@@ -16,8 +16,10 @@ public interface iProductDetailRepository extends CrudRepository<ProductDetail,I
             "and p.size_id =:sizeId and p.color_id =:colorId ",nativeQuery = true)
     ProductDetail getByDetail (@Param("productId") int productId , @Param("sizeId") int sizeId, @Param("colorId") int colorId);
 
-    @Query(value = "select p.image from tbl_productdetail p where p.color_id=:colorId",nativeQuery = true)
-    ProductDetail getImagebyColor (@Param("colorId")int colorId);
+    @Query(value = "select * from tbl_productdetail p where p.color_id=:colorId and p.product_id=:productId",nativeQuery = true)
+    ProductDetail getImagebyColor (@Param("colorId")int colorId,@Param("productId")int productId);
+
+
 }
 
 

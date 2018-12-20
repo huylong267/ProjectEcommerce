@@ -4,6 +4,8 @@
 
 
 </head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css">
+
 
 <link href='https://theme.hstatic.net/1000294112/1000378515/14/owl.carousel.css?v=297' rel='stylesheet' type='text/css'
       media='all'/>
@@ -13,6 +15,8 @@
       type='text/css' media='all'/>
 <script src='https://theme.hstatic.net/1000294112/1000378515/14/owl.carousel.min.js?v=297'
         type='text/javascript'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
 <style type="text/css">
     select#select {
         margin: 0 auto;
@@ -30,7 +34,7 @@
 <body>
 
 
-<div class="container-fluid">
+<div class="container-fluid" style="margin-top: 150px">
     <div th:replace="common::header"></div>
     <div class="main">
         <div class="container product-item">
@@ -69,15 +73,14 @@
                             <div class="pro-short-desc" th:text="${product.getDesc()}">
                             </div>
 
-                            <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm"
-                                  class="form-vertical">
+                            <div class="form-vertical">
                                 <div class="product-variants-wrapper">
                                     <div class="color-choose">
                                         <div class="color-choose-title">Màu sắc</div>
-                                        <div class="div-input-choose-color"th:each="p:${productDetail}">
-                                            <div class="radio-color">
+                                        <div class="div-input-choose-color" th:each="p:${productDetail}" th:attr="data-productid=${product.getProduct_id()}">
+                                            <div class="radio-color" >
                                                 <label for="input-choose-color-blue" th:text="${p.getColor().getName()}"></label><input type="radio"
-                                                                                                        name="optradio"
+                                                                                                            name="optradio"
                                                                                                         id="input-choose-color-blue" th:value="${p.getColor().getColor_id()}">
                                             </div>
                                             <!--<div class="radio-color">-->
@@ -96,8 +99,8 @@
                                 <div class="product-variants-wrapper">
                                     <div class="color-choose">
                                         <div class="color-choose-title">Kích thước</div>
-                                        <div class="div-input-choose-color">
-                                            <div class="radio-color" th:each="p:${productDetail}">
+                                        <div class="div-input-choose-size">
+                                            <div class="radio-size" th:each="p:${productDetail}">
                                                 <label for="input-choose-size-M" th:text="${p.getSize().getName()}"></label><input type="radio"
                                                                                                         name="sizeradio"
                                                                                                         id="input-choose-size-M" th:value="${p.getSize().getSize_id()}">
@@ -139,230 +142,33 @@
                                         </button>
                                     </div>
                                 </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="product-cross" style="display: inline-block">
-                    <h3>Sản phẩm liên quan </h3>
-                    <div id="owl-home-featured-products-slider" class="owl-carousel owl-theme">
-                        <div class="product-content1">
-                            <div class="product-over-tool">
-                                <a href="javascript:void(0);" class="btn-buy-now"><i class="fa fa-cart-arrow-down"></i></a>
-
-                                <a href=""><i class="fa fa-exchange"></i></a>
-
-                                <a href=""><i class="fa fa-heart"></i></a>
-                            </div>
-                            <div class="product-over-tool-gio-hang">
-                                <a href="">Giỏ Hàng</a>
-                            </div>
-
-                            <div class="product-img">
-
-                                <img src="./img/img1.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="product-content1">
-                            <div class="product-over-tool">
-                                <a href=""><i class="fa fa-cart-arrow-down"></i></a>
-
-                                <a href=""><i class="fa fa-exchange"></i></a>
-
-                                <a href=""><i class="fa fa-heart"></i></a>
-                            </div>
-                            <div class="product-over-tool-gio-hang">
-                                <a href="">Giỏ Hàng</a>
-                            </div>
-
-                            <div class="product-img">
-
-                                <img src="./img/img2.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="product-content1">
-                            <div class="product-over-tool">
-                                <a href=""><i class="fa fa-cart-arrow-down"></i></a>
-
-                                <a href=""><i class="fa fa-exchange"></i></a>
-
-                                <a href=""><i class="fa fa-heart"></i></a>
-                            </div>
-                            <div class="product-over-tool-gio-hang">
-                                <a href="">Giỏ Hàng</a>
-                            </div>
-
-                            <div class="product-img">
-
-                                <img src="./img/img3.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="product-content1">
-                            <div class="product-over-tool">
-                                <a href="javascript:void(0);" class="btn-buy-now"><i class="fa fa-cart-arrow-down"></i></a>
-
-                                <a href=""><i class="fa fa-exchange"></i></a>
-
-                                <a href=""><i class="fa fa-heart"></i></a>
-                            </div>
-                            <div class="product-over-tool-gio-hang">
-                                <a>Giỏ Hàng</a>
-                            </div>
-
-                            <div class="product-img">
-
-                                <img src="./img/img4.jpg" alt="">
-                            </div>
-
-                        </div>
-                        <div class="product-content1">
-                            <div class="product-over-tool">
-                                <a href=""><i class="fa fa-cart-arrow-down"></i></a>
-
-                                <a href=""><i class="fa fa-exchange"></i></a>
-
-                                <a href=""><i class="fa fa-heart"></i></a>
-                            </div>
-                            <div class="product-over-tool-gio-hang">
-                                <a href="">Giỏ Hàng</a>
-                            </div>
-
-                            <div class="product-img">
-
-                                <img src="./img/img5.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="product-content1">
-                            <div class="product-over-tool">
-                                <a href=""><i class="fa fa-cart-arrow-down"></i></a>
-
-                                <a href=""><i class="fa fa-exchange"></i></a>
-
-                                <a href=""><i class="fa fa-heart"></i></a>
-                            </div>
-                            <div class="product-over-tool-gio-hang">
-                                <a href="">Giỏ Hàng</a>
-                            </div>
-
-                            <div class="product-img">
-
-                                <img src="./img/img6.jpg" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-seen">
-                    <h3>Sản phẩm đã xem </h3>
-                    <div id="owl-home-featured-products-slider-daxem" class="owl-carousel owl-theme">
-                        <div class="product-content1">
-                            <div class="product-over-tool">
-                                <a href="javascript:void(0);" class="btn-buy-now"><i class="fa fa-cart-arrow-down"></i></a>
-
-                                <a href=""><i class="fa fa-exchange"></i></a>
-
-                                <a href=""><i class="fa fa-heart"></i></a>
-                            </div>
-                            <div class="product-over-tool-gio-hang">
-                                <a href="">Giỏ Hàng</a>
-                            </div>
-
-                            <div class="product-img">
-
-                                <img src="./img/img1.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="product-content1">
-                            <div class="product-over-tool">
-                                <a href=""><i class="fa fa-cart-arrow-down"></i></a>
-
-                                <a href=""><i class="fa fa-exchange"></i></a>
-
-                                <a href=""><i class="fa fa-heart"></i></a>
-                            </div>
-                            <div class="product-over-tool-gio-hang">
-                                <a href="">Giỏ Hàng</a>
-                            </div>
-
-                            <div class="product-img">
-
-                                <img src="./img/img2.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="product-content1">
-                            <div class="product-over-tool">
-                                <a href=""><i class="fa fa-cart-arrow-down"></i></a>
-
-                                <a href=""><i class="fa fa-exchange"></i></a>
-
-                                <a href=""><i class="fa fa-heart"></i></a>
-                            </div>
-                            <div class="product-over-tool-gio-hang">
-                                <a href="">Giỏ Hàng</a>
-                            </div>
-
-                            <div class="product-img">
-
-                                <img src="./img/img3.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="product-content1">
-                            <div class="product-over-tool">
-                                <a href="javascript:void(0);" class="btn-buy-now"><i class="fa fa-cart-arrow-down"></i></a>
-
-                                <a href=""><i class="fa fa-exchange"></i></a>
-
-                                <a href=""><i class="fa fa-heart"></i></a>
-                            </div>
-                            <div class="product-over-tool-gio-hang">
-                                <a>Giỏ Hàng</a>
-                            </div>
-
-                            <div class="product-img">
-
-                                <img src="./img/img4.jpg" alt="">
-                            </div>
-
-                        </div>
-                        <div class="product-content1">
-                            <div class="product-over-tool">
-                                <a href=""><i class="fa fa-cart-arrow-down"></i></a>
-
-                                <a href=""><i class="fa fa-exchange"></i></a>
-
-                                <a href=""><i class="fa fa-heart"></i></a>
-                            </div>
-                            <div class="product-over-tool-gio-hang">
-                                <a href="">Giỏ Hàng</a>
-                            </div>
-
-                            <div class="product-img">
-
-                                <img src="./img/img5.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="product-content1">
-                            <div class="product-over-tool">
-                                <a href=""><i class="fa fa-cart-arrow-down"></i></a>
-
-                                <a href=""><i class="fa fa-exchange"></i></a>
-
-                                <a href=""><i class="fa fa-heart"></i></a>
-                            </div>
-                            <div class="product-over-tool-gio-hang">
-                                <a href="">Giỏ Hàng</a>
-                            </div>
-
-                            <div class="product-img">
-
-                                <img src="./img/img6.jpg" alt="">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="container">
+                <h1>Sản phẩm liên quan </h1>
+                <div id="owl-home-featured-products-slider" class="owl-carousel owl-theme">
+                    <div  class="product-content1" th:each="p:${productbyCate}">
+                        <div  class="product-over-tool">
+                            <a href="javascript:void(0);" class="btn-buy-now"><i class="fa fa-cart-arrow-down"></i></a>
 
+                            <a href=""><i class="fa fa-exchange"></i></a>
+
+                            <a href=""><i class="fa fa-heart"></i></a>
+                        </div>
+                        <div  class="product-over-tool-gio-hang">
+                            <a href="">Giỏ Hàng</a>
+                        </div>
+
+                        <div class="product-img"  style="cursor: pointer" th:attr="data-productid=${p.getProduct_id()}">
+
+                            <img th:src="${p.getImage()}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>
@@ -416,8 +222,13 @@
         gallery: "gallery_09",
         galleryActiveClass: "active"
     });
+    $(".product-img").click(function () {
+        var productid= $(this).data("productid");
+        location.href="http://localhost:1111/productdetail/"+productid;
+
+    })
 
 </script>
-
+<script type="text/javascript" src="/js/productdetailpage.js"></script>
 </body>
 </html>

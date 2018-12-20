@@ -15,8 +15,8 @@
         </script>
         <link rel="stylesheet" th:href="@{/css/home.css}">
 </head>
-<body>
-<div class="header" th:fragment="header">
+<body style="position: relative">
+<div class="header" style="position: fixed ;top:0;left: 0; right: 0; z-index: 800" th:fragment="header">
     <div class="top-header">
         <div class="fone-header"><i class="fa fa-phone-square" aria-hidden="true" style="margin-right:10px;"></i>0969710xxx</div>
         <div class="icon-header">
@@ -55,6 +55,7 @@
                     </li>
                     <li>
                         <a href="#">Giỏ hàng</a>
+                        <span class="number-quantity">1</span>
                     </li>
 
                     <li class="drop_menu" id="drop-menu-logged" sec:authorize="isAuthenticated()">

@@ -138,7 +138,7 @@ public class    ProductDetailApiController {
         return result;
     }
 
-    @GetMapping("findproductDetailbyColor/{productId}")
+    @GetMapping("/findproductDetailbyColor/{productId}")
     public BaseApiResult findproductDetailbyColor (@PathVariable int productId,@RequestParam("optradio")int optradio){
         DataApiResult result = new DataApiResult();
         try {

@@ -39,7 +39,7 @@ public class HomeController {
 
 
     @GetMapping("/")
-    public String home(Model model){
+    public String home(Model model ,HttpServletResponse httpServletResponse){
         List<Category> categorryList = categoryServiceImp.findAllCate();
         model.addAttribute("categories", categorryList);
         model.addAttribute("productShirtHome",productServiceImp.listProductHome(3));

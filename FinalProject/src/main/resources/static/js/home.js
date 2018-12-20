@@ -129,7 +129,11 @@ $(document).ready(function(){
         $(this).addClass('current');
         $("#"+tab_id).addClass('current');
     });
+    var quantity =0;
+    $(".product-over-tool-gio-hang").click(function () {
+        quantity++
+        $(".number-quantity").attr('style','display:inline-block').text(quantity);
 
-
+    })
 })
 

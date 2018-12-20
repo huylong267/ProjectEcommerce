@@ -116,8 +116,10 @@ public class CollectionsController {
         model.addAttribute("categories", categoryServiceImp.findAllCate());
         List<ProductDetail> productDetail = productDetailServiceImp.findByProductId(id);
         Product product= productServiceImp.findOneProduct(id);
+        List<Product> listproductBycategory = productServiceImp.listProductHome(product.getCategory().getCategory_id());
         model.addAttribute("productDetail",productDetail);
         model.addAttribute("product",product);
+        model.addAttribute("productbyCate",listproductBycategory);
         return  "product";
     }
 }

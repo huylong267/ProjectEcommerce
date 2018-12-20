@@ -5,7 +5,7 @@
 </head>
 <link rel="stylesheet" th:href="@{./css/collections.css}">
 <body>
-	<div class="container-fluid">
+	<div class="container-fluid" style="margin-top: 150px">
 		<div th:replace="common::header"></div>
 		<div class="main padding-top-mobile">
 			<div class="header-navigate">
@@ -165,7 +165,7 @@
 	<script>
 		$(".product-content").click(function () {
 		    var productId= $(this).data("productid");
-            location.href="localhost:1111/productdetail/"+productId;
+            location.href="http://localhost:1111/productdetail/"+productId;
 
         })
 	</script>

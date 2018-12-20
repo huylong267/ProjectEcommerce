@@ -699,3 +699,12 @@ h3.title, .title.h3 {
 .footer-content .footer-certification a {
   display: inline-block;
 }
+.number-quantity{
+  background: white;
+  margin: 5px;
+  padding: 6px;
+  border-radius: 50%;
+  display: none;
+  font-weight: bolder;
+
+}

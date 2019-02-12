@@ -49,7 +49,7 @@
 							Áo Nam
 						</h3>
 						<div class="kt-heading-subtitle">
-							<a href="">Xem Thêm</a>
+							<a th:href="@{/productbycategory?categoryId=3}" >Xem Thêm</a>
 						</div>
 					</div>
 					<div class="product">
@@ -64,7 +64,7 @@
 										<a href=""><i class="fa fa-heart"></i></a>
 									</div>
 									<div  class="product-over-tool-gio-hang">
-										<a>Giỏ Hàng</a>
+										<a th:href="@{'productdetail/'+${p.getProduct_id()}}">Giỏ Hàng</a>
 									</div>
 
 									<div class="product-img">
@@ -118,7 +118,7 @@
 							Quần Nam
 						</h3>
 						<div class="kt-heading-subtitle">
-							<a href="">Xem Thêm</a>
+							<a th:href="@{/productbycategory?categoryId=15}">Xem Thêm</a>
 						</div>
 					</div>
 					<div class="product">
@@ -195,10 +195,10 @@
 				<div class="col-md-8">
 					<div class="kt-heading-wrapper">
 						<h3 class="kt-heading-title">
-							Đồ Phụ Kiện
+							Giày Nam
 						</h3>
 						<div class="kt-heading-subtitle">
-							<a href="">Xem Thêm</a>
+							<a th:href="@{/productbycategory?categoryId=9}">Xem Thêm</a>
 						</div>
 					</div>
 					<div class="product">

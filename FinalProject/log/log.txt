@@ -4108,3 +4108,9 @@
 2019-Jan-01 23:35:07 PM [restartedMain] DEBUG application.Application - Start main ---------------- 
 2019-Jan-10 19:48:18 PM [main] DEBUG application.Application - Start main ---------------- 
 2019-Jan-10 19:48:19 PM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2019-Jan-11 19:07:54 PM [main] DEBUG application.Application - Start main ---------------- 
+2019-Jan-11 19:07:54 PM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2019-Jan-11 19:19:47 PM [main] DEBUG application.Application - Start main ---------------- 
+2019-Jan-11 19:19:47 PM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2019-Feb-12 23:33:33 PM [main] DEBUG application.Application - Start main ---------------- 
+2019-Feb-12 23:33:34 PM [restartedMain] DEBUG application.Application - Start main ---------------- 

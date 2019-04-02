@@ -4,4 +4,5 @@ import application.data.model.OrderDetail;
 
 public interface OrderDetailService {
     OrderDetail createOrderDetail(OrderDetail orderDetail);
+
 }

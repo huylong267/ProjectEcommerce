@@ -5,7 +5,7 @@
 </head>
 <link rel="stylesheet" th:href="@{./css/collections.css}">
 <body>
-	<div class="container-fluid" style="margin-top: 150px">
+	<div class="container-fluid">
 		<div th:replace="common::header"></div>
 		<div class="main padding-top-mobile">
 			<div class="header-navigate">
@@ -116,7 +116,7 @@
 																	<a href=""><i class="fa fa-heart"></i></a>
 																</div>
 																<div  class="product-over-tool-gio-hang">
-																	<a href="">Giỏ Hàng</a>
+																	<a>Giỏ Hàng</a>
 																</div>
 																<div class="product-img">
 																	<img th:src="${product.getImage()}" alt="">
@@ -134,7 +134,6 @@
 															</span>
 														</div>
 													</div>
-
 											</div>
 
 

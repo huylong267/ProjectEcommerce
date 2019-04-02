@@ -1,0 +1,16 @@
+diff a/FinalProject/.idea/workspace.xml b/FinalProject/.idea/workspace.xml	(rejected hunks)
+@@ -2,12 +2,9 @@
+ <project version="4">
+   <component name="ChangeListManager">
+     <list default="true" id="ece2be7f-4bcc-4aa5-8fde-603f52d81cd7" name="Default Changelist" comment="">
+-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/application/controller/api/OrderDetailController.java" />
+-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/application/data/service/page/OrderDetailService.java" />
+-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/application/data/service/page/OrderDetailServiceImp.java" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/log.txt" afterPath="$PROJECT_DIR$/log/log.txt" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/application/data/service/page/OrderService.java" afterPath="$PROJECT_DIR$/src/main/java/application/data/service/page/OrderService.java" />
++      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/application/model/OrderDetailModel.java" afterPath="$PROJECT_DIR$/src/main/java/application/model/OrderDetailModel.java" />
++      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
+     </list>
+     <ignored path="$PROJECT_DIR$/.gradle/" />
+     <ignored path="$PROJECT_DIR$/build/" />

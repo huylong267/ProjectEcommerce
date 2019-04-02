@@ -14,7 +14,7 @@ public class OrderDetailModel {
     @JsonDeserialize(using = CustomDateDeserializer.class)
     private Date updated_date;
     private String address;
-    private OrderStatusModel orderStatusModel;
+
 
     public int getId() {
         return id;

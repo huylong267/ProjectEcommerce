@@ -1,24 +1,28 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
-<head  th:fragment="head">
-        <meta charset="UTF-8">
-        <title>Document</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <link rel="stylesheet" type="text/css" th:href="@{/css/animate.css}">
-        <link rel="stylesheet" type="text/css" th:href="@{/css/home-responsive.css}">
-        <script type="text/javascript" th:src="@{/js/wow.js}"></script>
-        <script type="text/javascript" th:src="@{/js/home.js}"></script>
-        <script type="text/javascript">
-            new WOW().init();
-        </script>
-        <link rel="stylesheet" th:href="@{/css/home.css}">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head th:fragment="head">
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/animate.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/home-responsive.css}">
+    <script type="text/javascript" th:src="@{/js/wow.js}"></script>
+    <script type="text/javascript" th:src="@{/js/home.js}"></script>
+    <script type="text/javascript" th:src="@{/js/cart.js}"></script>
+    <script type="text/javascript">
+        new WOW().init();
+    </script>
+    <link rel="stylesheet" th:href="@{/css/home.css}">
 </head>
 <body style="position: relative">
 <div class="header" style="position: fixed ;top:0;left: 0; right: 0; z-index: 800" th:fragment="header">
     <div class="top-header">
-        <div class="fone-header"><i class="fa fa-phone-square" aria-hidden="true" style="margin-right:10px;"></i>0969710xxx</div>
+        <div class="fone-header"><i class="fa fa-phone-square" aria-hidden="true" style="margin-right:10px;"></i>0969710xxx
+        </div>
         <div class="icon-header">
             <div class="vuong">
                 <div class="con"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></div>
@@ -35,15 +39,16 @@
         <div class="logo"></div>
         <div class="menu">
             <div class="cap1">
-                <ul >
-                    <li  style="background:#c52d2f;">
+                <ul>
+                    <li style="background:#c52d2f;">
                         <a th:href="@{/}">Trang chủ</a>
                     </li>
                     <li class="drop_menu">
                         <a th:href="@{/collection}">Sản Phẩm <i class="fa fa-sort-desc" aria-hidden="true"></i></a>
-                        <div class="cap2" >
+                        <div class="cap2">
                             <ul th:each="category:${categories}">
-                                <li><a th:href="@{'/productbycategory?categoryId='+${category.getCategory_id()}}" th:text="${category.getName()}"></a></li>
+                                <li><a th:href="@{'/productbycategory?categoryId='+${category.getCategory_id()}}"
+                                       th:text="${category.getName()}"></a></li>
                             </ul>
                         </div>
                     </li>
@@ -53,17 +58,17 @@
                     <li>
                         <a th:href="@{/lienhe}">Giới thiệu</a>
                     </li>
-                    <li>
+                    <li class="item-cart">
                         <a href="#">Giỏ hàng</a>
                         <span class="number-quantity">1</span>
                     </li>
 
                     <li class="drop_menu" id="drop-menu-logged" sec:authorize="isAuthenticated()">
                         <a th:inline="text">
-                            <span sec:authentication="name"></span>  <i class="fa fa-caret-down"></i>
+                            <span sec:authentication="name"></span> <i class="fa fa-caret-down"></i>
                         </a>
                         <div class="cap2">
-                            <ul >
+                            <ul>
                                 <li><a th:href="@{/edituser}">
                                     Chỉnh sửa
                                 </a></li>
@@ -73,10 +78,10 @@
 
                     </li>
                     <li class="drop_menu" id="drop-menu-loggin" sec:authorize="!isAuthenticated()">
-                        <a >Tài khoản <i class="fa fa-sort-desc" aria-hidden="true"></i></a>
-                        <div class="cap2" >
-                            <ul >
-                                <li><a  th:href="@{/login}">Đăng nhập</a></li>
+                        <a>Tài khoản <i class="fa fa-sort-desc" aria-hidden="true"></i></a>
+                        <div class="cap2">
+                            <ul>
+                                <li><a th:href="@{/login}">Đăng nhập</a></li>
                                 <li><a th:href="@{/register}">Đăng kí</a></li>
                             </ul>
                         </div>
@@ -90,13 +95,13 @@
         </div>
         <div class="menu2 wow slideInDown" data-wow-duration="1500ms">
             <div class="cap1-2">
-                <ul >
-                    <li  style="background:#c52d2f;">
+                <ul>
+                    <li style="background:#c52d2f;">
                         <a href="@{/}">Trang chủ</a>
                     </li>
                     <li class="drop_menu">
                         <a th:href="@{/collection}">Sản phẩm <strong>></strong></a>
-                        <div class="cap2-2" >
+                        <div class="cap2-2">
                             <ul th:each="category:${categories}">
                                 <li><a href="" th:text="${category.getName()}"></a></li>
                             </ul>
@@ -110,8 +115,8 @@
                     </li>
                     <li class="drop_menu">
                         <a>Tài khoản <strong>></strong></a>
-                        <div class="cap2-2" >
-                            <ul >
+                        <div class="cap2-2">
+                            <ul>
                                 <li><a href="login.html">Đăng nhập</a></li>
                                 <li><a th:href="@{/register}">Đăng kí</a></li>
                             </ul>
@@ -119,7 +124,7 @@
                     </li>
 
                     <li>
-                        <a href="blog.html">Giỏ hàng</a>
+                        <a >Giỏ hàng</a>
                     </li>
 
                 </ul>
@@ -129,6 +134,35 @@
             <a href="#" class="close">☰</a>
             <a href="#" class="open">☰</a>
         </div>
+    </div>
+</div>
+<div id="modal-create-cart" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Form Chi tiết sản phẩm</h4>
+            </div>
+            <div class="modal-body">
+                <div class="img-select-block margin-bottom-15">
+                    <label>Product image</label><br/>
+                    <img id="preview-product-detail-img" th:src="@{/img/default.png}"/>
+                    <input type='file' id="input-select-img-product-detail"/>
+                </div>
+                <div class="form-group margin-bottom-15">
+                    <label>Số lượng:</label>
+                    <input type="text" class="form-control" id="input-productdetail-quantity">
+                </div>
+
+                <button class="btn btn-default btn-save-productdetail">Save product</button>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
     </div>
 </div>
 <div class="footer" th:fragment="footer">
@@ -195,14 +229,14 @@
 
                             </div>
                             <div class="footer-tel">
-                                <i class="fa fa-phone-square" aria-hidden="true" ></i>
+                                <i class="fa fa-phone-square" aria-hidden="true"></i>
                                 <a href="">0934 323 882</a>
                                 <span>/</span>
                                 <a href="">0934 323 882</a>
                             </div>
                             <div class="footer-email">
                                 <i class="fa fa-envelope" aria-hidden="true"></i>
-                                <a href="">	support@suplo.vn
+                                <a href=""> support@suplo.vn
                                 </a>
                             </div>
                         </ul>
@@ -243,9 +277,5 @@
     </div>
 </div>
 </body>
-<script>
-        $(document).ready(function () {
 
-        });
-</script>
 </html>

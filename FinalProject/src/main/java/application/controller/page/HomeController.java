@@ -40,11 +40,12 @@ public class HomeController {
 
     @GetMapping("/")
     public String home(Model model ,HttpServletResponse httpServletResponse){
+        
         List<Category> categorryList = categoryServiceImp.findAllCate();
         model.addAttribute("categories", categorryList);
-        model.addAttribute("productShirtHome",productServiceImp.listProductHome(3));
-        model.addAttribute("producttrousersHome",productServiceImp.listProductHome(15));
-        model.addAttribute("productOtherHome",productServiceImp.listProductHome(9));
+        model.addAttribute("productShirtHome",productServiceImp.listProductHome(2));
+        model.addAttribute("producttrousersHome",productServiceImp.listProductHome(1));
+        model.addAttribute("productOtherHome",productServiceImp.listProductHome(3));
         return "home";
     }
     @GetMapping(path="/list-news")

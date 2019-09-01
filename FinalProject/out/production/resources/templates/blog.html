@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="common::head"></div>
+    <link rel="stylesheet" th:href="@{/css/blog.css}">
+
+</head>
+<body>
+<div class="container-fluid" style="margin-top: 150px">
+    <div th:replace="common::header"></div>
+    <div class="main padding-top-mobile">
+        <div class="header-navigate">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <ol class="breadcrumb breadcrumb-arrow">
+                            <li>
+                                <a href="#">Trang chu</a>
+                            </li>
+
+                            <li>
+                                <a href="#">Blog</a>
+                            </li>
+
+                            <li>
+                                <a href="#">Tin tức</a>
+                            </li>
+
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="blog-template">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 col-md-9 col-sm-12">
+                        <ul class="blog-list-articles lists-articles " id="list-articles"
+                            th:each="news : ${list.getListNews()}">
+                            <li class="clearfix inner_news">
+                                <div class="blog-item-image">
+                                    <a th:href="@{'~/list-news/detail/news/' + ${news.getNews_id()}}"><img
+                                            th:src="${'upload/'+news.getImage()}" alt=""></a>
+                                </div>
+                                <div class="blog-item-title">
+                                    <div class="blog-content-short-description content">
+                                        <article>
+                                            <a th:href="@{'~/list-news/detail/news/' + ${news.getNews_id()}}">
+                                                <h2 th:text="${news.getTitle()}"></h2>
+                                            </a>
+
+                                            <p th:text="${news.getCreated_date()}"></p>
+
+                                            <p th:text="${news.getContent()}"></p>
+                                            <p> Các bài viết từ nguồn abcd</p>
+                                        </article>
+                                    </div>
+                                </div>
+                            </li>
+                            <hr>
+
+                        </ul>
+                        <div class="clearfix loadmore">
+                            <div class="btn-loading">
+                                Xem thêm , còn nhiều bài viết khác
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                        <div class="blog-sidebar">
+                            <div class="blog-title-sidebar">
+                                <span>Bài viết mới nhất nhất</span>
+                            </div>
+                            <ul class="blog-list-articles" th:each="newnews : ${list.getListNewNews()}">
+                                <li class="clearfix">
+                                    <div class="blog-item-image">
+                                        <a th:href="@{'~/list-news/detail/news/' + ${newnews.getNews_id()}}"><img
+                                                th:src="${'upload/'+newnews.getImage()}" alt=""></a>
+                                    </div>
+                                    <div class="blog-item-title">
+                                        <a th:href="@{'~/list-news/detail/news/' + ${newnews.getNews_id()}}">
+                                            <h2 th:text="${newnews.getTitle()}"></h2>
+                                        </a>
+                                        <p th:text="${newnews.getCreated_date()}"></p>
+                                    </div>
+
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ads clearfix padd-15">
+                            <a href=""><img src="./img/banner_qc.jpg" alt=""></a>
+                        </div>
+                        <div class="ads clearfix padd-15">
+                            <a href=""><img src="./img/blog-sidebar.jpg" alt=""></a>
+                        </div>
+                        <div class="blog-sidebar">
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div th:replace="common::footer"></div>
+</div>
+<script type="text/javascript" th:src="@{./js/jquery.min.js}"></script>
+<script th:src="@{/js/readmore.js}"></script>
+<script>
+    $(document).ready(function () {
+        $('article').readmore({
+            speed: 500,
+            collapsedHeight: 150,
+            afterToggle: function (trigger, element, expanded) {
+                if (!expanded) { // The "Close" link was clicked
+                    $('html, body').animate({scrollTop: element.offset().top}, {duration: 100});
+                }
+            }
+        });
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common::head">
+
+</head>
+<link rel="stylesheet" th:href="@{./css/lienhe.css}">
+<body>
+	<div class="container-fluid">
+		<div th:replace="common::header"></div>
+		<div class="main">
+			<div class="header-navigate padding-top-mobile">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<ol class="breadcrumb breadcrumb-arrow">
+								<li>
+									<a href="#">Trang chu</a>
+								</li>
+
+								<li>
+									<a href="#">Danh Mục</a>
+								</li>
+
+								<li>
+									<a href="#">Tất cả sản phẩm</a>
+								</li>
+
+							</ol>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="layout-page">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h1>Liên hệ</h1>
+						</div>
+						<div class="row content-contact">
+							<div class="col-md-12 col-xs-12">
+								<div class="page-google-map">
+									<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.7007623953828!2d105.80950911479147!3d21.004628893977927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac9be4b6fa99%3A0x908b7eebc2aa484a!2zTmfDtSAxNDEgUXVhbiBOaMOibiwgTmjDom4gQ2jDrW5oLCBUaGFuaCBYdcOibiwgSMOgIE7hu5lpLCBWaWV0bmFt!5e0!3m2!1sen!2s!4v1527150559018" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+								</div>
+							</div>
+							<div class="col-md-12 col-xs-12 clearfix">
+								<div class="row">
+									<div class="col-md-7 col-xs-12">
+										<div class="page-top-contact">
+											<div class="page-top-title">
+												<i class="fa fa-envelope"></i>
+												<span>Để lại lời nhắn cho chúng tôi</span>
+											</div>
+											<form accept-charset="UTF-8" action="/contact" class="contact-form" method="post">
+												<input name="form_type" type="hidden" value="contact">
+												<input name="utf8" type="hidden" value="✓">
+
+
+												<div class="contact-form">
+													<div class="row">
+														<div class="col-sm-6 col-xs-12">
+															<div class="input-group">
+																<span class="input-group-addon"><i class="fa fa-user"></i></span>
+																<input type="text" name="contact[name]" class="form-control" placeholder="Họ và tên" aria-describedby="basic-addon1">
+															</div>
+															<div class="input-group">
+																<span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+																<input type="text" name="contact[email]" class="form-control" placeholder="Email đầy đủ" aria-describedby="basic-addon1">
+															</div>
+															<div class="input-group">
+																<span class="input-group-addon"><i class="fa fa-phone"></i></span>
+																<input type="text" name="contact[phone]" class="form-control" placeholder="Số điện thoại" aria-describedby="basic-addon1">
+															</div>
+														</div>
+														<div class="col-sm-6 col-xs-12">
+															<div class="input-group">
+																<textarea name="contact[body]" placeholder="Viết lời nhắn"></textarea>
+															</div>
+														</div>
+														<div class="col-xs-12">
+															<button>
+																Gửi lời nhắn
+															</button>
+														</div>
+													</div>
+												</div>
+											</form>
+										</div>
+									</div>
+									<div class="col-md-5 col-xs-12">
+										<div class="page-left-contact clearfix">
+											<div class="page-left-title">
+												<i class="fa fa-university"></i>
+												<span>Thông tin liên hệ</span>
+											</div>
+											<ul class="info-address row">
+												<li>
+													<i class="fa fa-map-marker"></i>
+													<span>Số 141 Quan Nhân , Phường Trung Hoà, Hà Nội</span>
+												</li>
+												<li>
+													<i class="fa fa-envelope-o"></i>
+													<span>hi@haravan.com</span>
+												</li>
+												<li>
+													<i class="fa fa-phone"></i>
+													<span>1900.636.099</span>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="./js/jquery.min.js"></script>
+</body>
+</html>

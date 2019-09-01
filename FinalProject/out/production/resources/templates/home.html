@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<div th:replace="common::head"></div>
+
+</head>
+<body>
+<div class="container-fluid">
+	<div th:replace="common::header"></div>
+	<div class="main" style="margin-top: 150px">
+		<div class="slideAnh">
+			<div class="anh mot wow fadeInDown" data-wow-duration="0.5s">
+				<div class="chuMot wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+				<div class="chuHai wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">Accusantium doloremque laudantium totam rem aperiam, eaque ipsa...</div>
+				<div class="read wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.5s">Read more</div>
+				<div class="nguoi anh1 wow fadeInUpBig" data-wow-duration="1s" data-wow-delay="1.5s"></div>
+			</div>
+			<div class="anh hai wow rotateIn" data-wow-duration="1s">
+				<div class="chuMot wow bounceInRight" data-wow-duration="1s" >Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+				<div class="chuHai wow bounceInRight" data-wow-duration="1.5s" >Accusantium doloremque laudantium totam rem aperiam, eaque ipsa...</div>
+				<div class="read wow bounceInRight" data-wow-duration="2s" >Read more</div>
+				<div class="nguoi anh2 wow bounceInLeft" data-wow-duration="3s" ></div>
+			</div>
+			<div class="anh ba zoomInDown" data-wow-duration="1s">
+				<div class="chuMot wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+				<div class="chuHai wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.8s">Accusantium doloremque laudantium totam rem aperiam, eaque ipsa...</div>
+				<div class="read wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="1.5s">Read more</div>
+				<div class="nguoi anh3 wow fadeInDown" data-wow-duration="0.8s" data-wow-delay="1.5s"></div>
+			</div>
+			<div class="chon trai" onclick="back()"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
+			<div class="chon phai" onclick="next()"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
+			<div class="tronBao">
+				<div class="tron dau" onclick="chonSlide(0)"></div>
+				<div class="tron" onclick="chonSlide(1)"></div>
+				<div class="tron" onclick="chonSlide(2)"></div>
+			</div>
+		</div>
+		<div class="modun-1">
+			<div style="margin-right: 0px; margin-left: 0px"  class="row ">
+				<div style="padding: 0px" class="col-md-4 kt_column kt-column-bg hidden-xs hidden-sm">
+					<div class="image-qaonam">
+
+					</div>
+
+				</div>
+				<div class="col-md-8">
+					<div class="kt-heading-wrapper">
+						<h3 class="kt-heading-title">
+							Áo Nam
+						</h3>
+						<div class="kt-heading-subtitle">
+							<a th:href="@{/productbycategory?categoryId=3}" >Xem Thêm</a>
+						</div>
+					</div>
+					<div class="product">
+						<div class="row">
+							<div data-wow-delay="0.2s" class="product col-lg-4 col-md-6 col-sm-6 col-xs-6 wow fadeIn"  th:each="p:${productShirtHome}">
+								<div  class="product-content">
+									<div  class="product-over-tool">
+										<a href=""><i class="fa fa-cart-arrow-down"></i></a>
+
+										<a href=""><i class="fa fa-exchange"></i></a>
+
+										<a href=""><i class="fa fa-heart"></i></a>
+									</div>
+									<div  class="product-over-tool-gio-hang">
+										<!--<a th:href="@{'productdetail/'+${p.getProduct_id()}}">Giỏ Hàng</a>-->
+										<a >Giỏ Hàng</a>
+									</div>
+
+									<div class="product-img">
+
+										<a th:href="@{'productdetail/'+${p.getProduct_id()}}"><img th:src="${p.getImage()}" alt=""></a>
+									</div>
+
+								</div>
+								<h3 class="product-title">
+									<a th:href="@{'productdetail/'+${p.getProduct_id()}}" th:text="${p.getName()}"></a>
+								</h3>
+								<div class="product-price">
+										<span class="amout">
+											<!--<del class="sale-price">820.000d</del>-->
+											<span th:text="${p.getPrice()}"></span>
+										</span>
+								</div>
+							</div>
+
+
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div id="home-countdown">
+			<div class="parallax">
+				<div class="wrapper">
+					<div class="inner">
+						<div class="parallax-text">
+							<p class="parallax-title">
+								SUPLO FASHION
+							</p>
+							<p>
+								Thời trang - Phong cách - Cá tính
+							</p>
+							<a href="" target="_blank">Tìm cửa hàng gần nhất</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modun-3">
+			<div style="margin-right: 0px; margin-left: 0px"  class="row ">
+				<div class="col-md-8">
+					<div class="kt-heading-wrapper">
+						<h3 class="kt-heading-title">
+							Quần Nam
+						</h3>
+						<div class="kt-heading-subtitle">
+							<a th:href="@{/productbycategory?categoryId=1}">Xem Thêm</a>
+						</div>
+					</div>
+					<div class="product">
+						<div class="row">
+							<div data-wow-delay="0.2s" class="product col-lg-4 col-md-6 col-sm-6 col-xs-6 wow fadeIn" th:each="p1:${producttrousersHome}">
+								<div  class="product-content">
+									<div  class="product-over-tool">
+										<a href=""><i class="fa fa-cart-arrow-down"></i></a>
+
+										<a href=""><i class="fa fa-exchange"></i></a>
+
+										<a href=""><i class="fa fa-heart"></i></a>
+									</div>
+									<div  class="product-over-tool-gio-hang">
+										<a>Giỏ Hàng</a>
+									</div>
+
+									<div class="product-img">
+
+										<a th:href="@{'productdetail/'+${p1.getProduct_id()}}"><img th:src="${p1.getImage()}" alt=""></a>
+									</div>
+
+								</div>
+								<h3 class="product-title">
+									<a th:href="@{'productdetail/'+${p1.getProduct_id()}}" th:text="${p1.getName()}"></a>
+								</h3>
+								<div class="product-price">
+										<span class="amout">
+											<!--<del class="sale-price">820.000d</del>-->
+											<span th:text="${p1.getPrice()}"></span>
+										</span>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div class="col-md-4 kt_column kt-column-bg hidden-xs hidden-sm">
+					<div class="image-dophukien">
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row equal_height modun-4">
+
+			<div class="col-md-8 kt_column  pad-top-lg pad-bottom-lg style-modun-4 ">
+				<div class="page-small-width">
+					<h3></h3>
+					<p>Chúng tôi chuyên kinh doanh sỉ và lẻ các mặt hàng thời trang nam trên Toàn Quốc với giá cả và chất lượng cạnh tranh nhất.Chỉ với một cú click chuột hoặc một cuộc điện thoại, bạn có thể sở hữu ngay sản phẩm của chúng tôi mà không cần đến tận nơi để mua sắm trong cuộc sống bận rộn hiện nay.</p>
+					<p class="remove-mar-bottom">
+						<a href="">Xem thêm</a>
+					</p>
+				</div>
+			</div>
+			<div class="col-md-4 kt_column pad-top-lg pad-bottom-lg style-modun-4-2">
+				<div class="kt-table">
+					<div class="kt-col">
+						<h2 class="white text-center no-margin">
+							Về chúng tôi
+						</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modun-5">
+			<div style="margin-right: 0px; margin-left: 0px"  class="row ">
+				<div style="padding: 0px" class="col-md-4 kt_column kt-column-bg hidden-xs hidden-sm">
+					<div class="image-dophukien">
+
+					</div>
+
+				</div>
+				<div class="col-md-8">
+					<div class="kt-heading-wrapper">
+						<h3 class="kt-heading-title">
+							Giày Nam
+						</h3>
+						<div class="kt-heading-subtitle">
+							<a th:href="@{/productbycategory?categoryId=9}">Xem Thêm</a>
+						</div>
+					</div>
+					<div class="product">
+						<div class="row">
+							<div data-wow-delay="0.2s" class="product col-lg-4 col-md-6 col-sm-6 col-xs-6 wow fadeIn" th:each="p:${productOtherHome}">
+								<div  class="product-content">
+									<div  class="product-over-tool">
+										<a href=""><i class="fa fa-cart-arrow-down"></i></a>
+
+										<a href=""><i class="fa fa-exchange"></i></a>
+
+										<a href=""><i class="fa fa-heart"></i></a>
+									</div>
+									<div  class="product-over-tool-gio-hang">
+										<a>Giỏ Hàng</a>
+									</div>
+
+									<div class="product-img">
+
+										<a th:href="@{'productdetail/'+${p.getProduct_id()}}"><img th:src="${p.getImage()}" alt=""></a>
+									</div>
+
+								</div>
+								<h3 class="product-title">
+									<a th:href="@{'productdetail/'+${p.getProduct_id()}}" th:text="${p.getName()}"></a>
+								</h3>
+								<div class="product-price">
+										<span class="amout">
+											<!--<del class="sale-price">820.000d</del>-->
+											<span th:text="${p.getPrice()}"></span>
+										</span>
+								</div>
+							</div>
+
+
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="site-dknt">
+			<div class="wrapper">
+				<div class="widget-newsletter widget">
+					<div class="title_top">
+						<img src="./img/title_top.png" alt="">
+					</div>
+					<div class="title_widget-newsletter">
+						<h3 class="title">Đăng ký bản tin</h3>
+					</div>
+					<p>Đăng ký theo dõi để nhận được những bản tin mới và nhiều ưu đãi của chúng tôi</p>
+					<form action="" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" class="input-group">
+						<input type="email" placeholder="Email của bạn ..." name="EMAIL" id="mail" class="input-group-field">
+						<span class="input-group-btn">
+								<input type="submid" class="btn" name="subscribe" id="subscribe" value="Đăng ký">
+							</span>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="modun-6">
+			<div class="kt-heading-wrapper">
+				<div class="kt-heading-divider">
+				</div>
+				<h3 class="kt-heading-title">
+					Tin Tức
+				</h3>
+				<div class="kt-heading-subtitle">
+					<a href="">Xem thêm</a>
+				</div>
+
+			</div>
+			<div class="container">
+				<div class="blog-posts">
+					<div class="row multi-columns-row">
+						<div class="blog-post col-lg-4 col-md-4 col-sm-6">
+							<a class="blog-post-thumbnail" href="">
+								<img src="./img/blog_1.jpg" alt="">
+							</a>
+							<h4 class="blog-post-title">
+								<a href="">Xu hướng thời trang 2018</a>
+							</h4>
+							<div class="blog-post-meta">
+								<span class="author vcard">By: Fusce shop</span>
+								<span class="comments-link"> Tháng 9 06, 2016</span>
+							</div>
+							<p>Bắc Kinh mới vào hè mà nhiệt độ đã liên tục duy trì ở mức trung bình 32-33 độ C, nhiều ngày nắng gắt chạm...</p>
+						</div>
+						<div class="blog-post col-lg-4 col-md-4 col-sm-6">
+							<a class="blog-post-thumbnail" href="">
+								<img src="./img/blog_2.jpg" alt="">
+							</a>
+							<h4 class="blog-post-title">
+								<a href="">Xu hướng thời trang 2018</a>
+							</h4>
+							<div class="blog-post-meta">
+								<span class="author vcard">By: Fusce shop</span>
+								<span class="comments-link"> Tháng 9 06, 2016</span>
+							</div>
+							<p>Bắc Kinh mới vào hè mà nhiệt độ đã liên tục duy trì ở mức trung bình 32-33 độ C, nhiều ngày nắng gắt chạm...</p>
+						</div>
+						<div class="blog-post col-lg-4 col-md-4 col-sm-6">
+							<a class="blog-post-thumbnail" href="">
+								<img src="./img/blog_3.jpg" alt="">
+							</a>
+							<h4 class="blog-post-title">
+								<a href="">Xu hướng thời trang 2018</a>
+							</h4>
+							<div class="blog-post-meta">
+								<span class="author vcard">By: Fusce shop</span>
+								<span class="comments-link"> Tháng 9 06, 2016</span>
+							</div>
+							<p>Bắc Kinh mới vào hè mà nhiệt độ đã liên tục duy trì ở mức trung bình 32-33 độ C, nhiều ngày nắng gắt chạm...</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div th:replace="common::footer"></div>
+</div>
+
+<script type="text/javascript">
+    if (window.location.hash && window.location.hash == '#_=_') {
+        if (window.history && history.pushState) {
+            window.history.pushState("", document.title, window.location.pathname);
+        } else {
+            // Prevent scrolling by storing the page's current scroll offset
+            var scroll = {
+                top: document.body.scrollTop,
+                left: document.body.scrollLeft
+            };
+            window.location.hash = '';
+            // Restore the scroll offset, should be flicker free
+            document.body.scrollTop = scroll.top;
+            document.body.scrollLeft = scroll.left;
+        }
+    }
+</script>
+</body>
+</html>

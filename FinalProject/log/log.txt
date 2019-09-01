@@ -1,0 +1,10 @@
+    2019-Apr-02 09:27:41 AM [main] DEBUG application.Application - Start main ----------------
+2019-Apr-02 09:27:42 AM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2019-Apr-02 13:27:45 PM [main] DEBUG application.Application - Start main ---------------- 
+2019-Apr-02 13:27:47 PM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2019-Apr-02 13:37:13 PM [main] DEBUG application.Application - Start main ---------------- 
+2019-Apr-02 13:37:13 PM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2019-Apr-02 13:46:47 PM [main] DEBUG application.Application - Start main ---------------- 
+2019-Apr-02 13:46:47 PM [restartedMain] DEBUG application.Application - Start main ---------------- 
+2019-Apr-02 14:15:30 PM [main] DEBUG application.Application - Start main ---------------- 
+2019-Apr-02 14:15:30 PM [restartedMain] DEBUG application.Application - Start main ---------------- 

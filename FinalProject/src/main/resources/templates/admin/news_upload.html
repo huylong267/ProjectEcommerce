@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="admin/layout :: head"></head>
+<body>
+
+<div id="wrapper">
+
+    <nav th:replace="admin/layout :: sidebar"></nav>
+
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-sm-12">
+                <h3 class="page-header">Quản lý tin tức</h3>
+            </div>
+            <!-- /.col-sm-12 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        Form upload
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <form th:action="@{/admin/news/{id}/upload(id=${news.news_id})}" method="POST" enctype="multipart/form-data">
+                            <div th:if="${news.image} != null" class="form-group">
+                                <label>Ảnh tiêu đề cũ</label> <br/>
+                                <img th:src="@{/upload/{image}(image=${news.image})}" width="100px" height="100px" />
+                            </div>
+                            <div class="form-group">
+                                <label>Ảnh tiêu đề <span class="required">*</span></label>
+                                <input type="file" name="image" required="required" />
+                            </div>
+                            <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Upload</button>
+                        </form>
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel -->
+            </div>
+            <!-- /.col-sm-12 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /#page-wrapper -->
+
+</div>
+
+</body>
+</html>

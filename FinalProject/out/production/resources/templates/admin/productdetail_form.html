@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="admin/layout :: head">
+    <link th:href="@{/css/admin/productdetail.css}" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" rel="stylesheet" type="text/css"
+          media="all"/>
+
+
+</head>
+<body>
+
+<div id="wrapper">
+
+    <nav th:replace="admin/layout :: sidebar"></nav>
+
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-sm-12">
+                <h3 class="page-header">Quản lý Chi tiết sản phẩm</h3>
+            </div>
+            <!-- /.col-sm-12 -->
+        </div>
+        <!-- /.row -->
+        <div class="well">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1" style="z-index: 1">
+                    <div class="input-group" style="margin: 5px">
+                        <span class="input-group-addon"
+                              style="color: white; background-color: #4173bd">Tìm Sản Phẩm</span>
+                        <input type="text" autocomplete="off" id="search" class="form-control input-lg"
+                               placeholder="Tìm theo tên sản phẩm" name="term">
+                    </div>
+                </div>
+                <div id="abc" class="content-product" style="display: none">
+                    <div class="col-md-6">
+                        <div class="img-select-block margin-bottom-15">
+                            <label>Product image</label><br/>
+                            <img id="preview-product-img" th:src="@{/img/default.png}"/>
+                            <input type='file' id="input-select-img-product" disabled="disabled"/>
+                        </div>
+
+                        <div class="form-group margin-bottom-15">
+                            <label>Product name:</label>
+                            <input type="text" class="form-control" id="input-product-name" disabled="disabled">
+                        </div>
+                        <div class="form-group margin-bottom-15">
+                            <label for="product-category">Category:</label>
+                            <select class="form-control" id="product-category" disabled="disabled">
+                                <option th:each="category : ${categories}"
+                                        th:value="${category.getCategory_id()}"
+                                        th:text="${category.getName()}"></option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group margin-bottom-15">
+                            <label>Product description:</label>
+                            <textarea type="text" class="form-control" id="input-product-desc"
+                                      style="min-height: 87px" disabled="disabled"></textarea>
+                        </div>
+                        <div class="form-group margin-bottom-15">
+                            <label>Product price:</label>
+                            <input type="text" class="form-control" id="input-product-price" disabled="disabled">
+                        </div>
+                        <div class="form-group">
+                            <label>Product created date:</label>
+                            <div class='input-group date' id='datepicker-created-date-product'>
+                                <input type='text' class="form-control" disabled="disabled"/>
+                                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-default" id="btn-create-productdetail" style="display: none">Thêm Chi tiết</button>
+        <!--/*@thymesVar id="productId" type=""*/-->
+        <div id="modal-create-product" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Form Chi tiết sản phẩm</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="img-select-block margin-bottom-15">
+                            <label>Product image</label><br/>
+                            <img id="preview-product-detail-img" th:src="@{/img/default.png}" />
+                            <input type='file' id="input-select-img-product-detail" />
+                        </div>
+                        <div class="form-group margin-bottom-15">
+                            <label for="product-category">Kích cỡ:</label>
+                            <select class="form-control" id="productdetail-size">
+                                <option th:each="size : ${sizes}"
+                                        th:value="${size.getSize_id()}"
+                                        th:text="${size.getName()}"></option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-group margin-bottom-15">
+                            <label for="product-category">Màu:</label>
+                            <select class="form-control" id="productdetail-color">
+                                <option th:each="color : ${colors}"
+                                        th:value="${color.getColor_id()}"
+                                        th:text="${color.getName()}"></option>
+                            </select>
+                        </div>
+                        <div class="form-group margin-bottom-15">
+                            <label>Số lượng:</label>
+                            <input type="text" class="form-control" id="input-productdetail-quantity">
+                        </div>
+
+                        <button class="btn btn-default btn-save-productdetail">Save product</button>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-sm-12 -->
+</div>
+<!-- /.row -->
+</div>
+<!-- /#page-wrapper -->
+
+</div>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/4f936b58/cloudflare-static/rocket-loader.min.js"
+        data-cf-nonce="a1b72576d8651f7c0857a28d-" defer=""></script>
+</body>
+
+<script type="text/javascript" th:src="@{/js/admin/productdetail.js}"></script>
+
+</body>
+</html>
